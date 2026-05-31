@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+  <rect width="900" height="620" fill="#101620"/>
+  <rect x="52" y="58" width="796" height="504" rx="28" fill="#080a0f" stroke="#2b3542" stroke-width="4"/>
+  <circle cx="450" cy="280" r="178" fill="#17202b" stroke="#58d7f7" stroke-width="8"/>
+  <path d="M310 230h280v102H310z" fill="#ff5b61"/>
+  <path d="M355 198h190l-58 190H413l-58-190Z" fill="#f7f8fb"/>
+  <path d="M388 226h124l-37 126h-50l-37-126Z" fill="#58d7f7"/>
+  <text x="76" y="520" fill="#f7f8fb" font-family="Arial, sans-serif" font-size="52" font-weight="900">RELAY VANGUARD</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900">
+  <rect width="720" height="900" fill="#101620"/>
+  <path d="M92 650h536L532 250H188L92 650Z" fill="#17202b" stroke="#58d7f7" stroke-width="8"/>
+  <path d="M160 582h400M188 488h344M214 392h292" stroke="#f7f8fb" stroke-width="10"/>
+  <path d="M188 250v400M532 250v400" stroke="#ff5b61" stroke-width="12"/>
+  <text x="146" y="760" fill="#f7f8fb" font-family="Arial, sans-serif" font-size="72" font-weight="900">RING</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+  <rect width="900" height="620" fill="#0b1118"/>
+  <rect x="320" y="54" width="260" height="512" rx="42" fill="#101620" stroke="#58d7f7" stroke-width="6"/>
+  <rect x="350" y="112" width="200" height="336" rx="24" fill="#17202b"/>
+  <path d="M382 388 450 260l68 128H382Z" fill="#b7f26d"/>
+  <circle cx="430" cy="218" r="38" fill="#ff5b61"/>
+  <rect x="380" y="480" width="140" height="34" rx="17" fill="#58d7f7"/>
+  <rect x="82" y="132" width="176" height="90" rx="18" fill="#17202b" stroke="#2b3542" stroke-width="4"/>
+  <rect x="642" y="364" width="176" height="90" rx="18" fill="#17202b" stroke="#2b3542" stroke-width="4"/>
+  <text x="82" y="532" fill="#f7f8fb" font-family="Arial, sans-serif" font-size="58" font-weight="900">SHORTS LAB</text>
+</svg>

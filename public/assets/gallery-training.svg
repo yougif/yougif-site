@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900">
+  <rect width="720" height="900" fill="#080a0f"/>
+  <rect x="72" y="90" width="576" height="720" rx="36" fill="#101620" stroke="#2b3542" stroke-width="5"/>
+  <circle cx="360" cy="370" r="150" fill="#17202b" stroke="#58d7f7" stroke-width="8"/>
+  <path d="M236 386c40-92 208-92 248 0" fill="none" stroke="#b7f26d" stroke-width="24" stroke-linecap="round"/>
+  <rect x="185" y="560" width="350" height="74" rx="20" fill="#ff5b61"/>
+  <text x="205" y="610" fill="#f7f8fb" font-family="Arial, sans-serif" font-size="42" font-weight="900">TRAINING</text>
+</svg>

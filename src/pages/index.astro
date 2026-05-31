@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { channels, gallery, origin, profile, projects, workflow } from "../data/yougif";
+---
+<BaseLayout title="Yougif | Creator Projects">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Yougif home">Yougif</a>
+    <nav aria-label="Primary navigation">
+      <a href="#projects">Projects</a>
+      <a href="#origin">Why</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#links">Links</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="kicker">{profile.kicker}</p>
+        <h1 id="hero-title">{profile.headline}</h1>
+        <p class="lead">{profile.lead}</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View projects</a>
+          <a class="button ghost" href="#links">Channels</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Yougif visual identity panel">
+        <img src={profile.heroImage} alt="Yougif broadcast waiting screen" />
+      </div>
+    </section>
+
+    <section class="section origin" id="origin" aria-labelledby="origin-title">
+      <div class="section-heading">
+        <p class="kicker">{origin.kicker}</p>
+        <h2 id="origin-title">{origin.title}</h2>
+      </div>
+      <div class="origin-panel">
+        <p>{origin.body}</p>
+        <ul>
+          {origin.points.map((point) => <li>{point}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <p class="kicker">selected work</p>
+        <h2 id="projects-title">Projects</h2>
+      </div>
+      <div class="project-grid">
+        {projects.map((project) => (
+          <button
+            class="project-card"
+            type="button"
+            data-modal-title={project.title}
+            data-modal-tag={project.tag}
+            data-modal-detail={project.detail}
+            data-modal-image={project.image}
+          >
+            <img src={project.image} alt="" loading="lazy" />
+            <span>{project.tag}</span>
+            <strong>{project.title}</strong>
+            <p>{project.summary}</p>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <section class="section split" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <p class="kicker">media wall</p>
+        <h2 id="gallery-title">Gallery</h2>
+      </div>
+      <div class="gallery-grid">
+        {gallery.map((item) => (
+          <button class="gallery-item" type="button" data-lightbox-src={item.src} data-lightbox-alt={item.alt}>
+            <img src={item.src} alt={item.alt} loading="lazy" />
+            <span>{item.label}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <section class="section workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading">
+        <p class="kicker">content flow</p>
+        <h2 id="workflow-title">Workflow</h2>
+      </div>
+      <ol class="flow-list">
+        {workflow.map(([step, title, body]) => (
+          <li><span>{step}</span><strong>{title}</strong><p>{body}</p></li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="section automation" id="automation" aria-labelledby="automation-title">
+      <div>
+        <p class="kicker">pipeline</p>
+        <h2 id="automation-title">Automation</h2>
+        <p>방송은 여러 플랫폼에 흩어져 있고, 녹화본과 썸네일은 로컬에 쌓인다. 유기프 사이트는 그 흐름을 공개 링크, 갤러리, 자동화 기록으로 묶는 허브 역할을 한다.</p>
+      </div>
+      <div class="pipeline" aria-label="Automation pipeline">
+        <span>Scan</span>
+        <span>Score</span>
+        <span>Render</span>
+        <span>Review</span>
+        <span>Publish</span>
+      </div>
+    </section>
+
+    <section class="section links" id="links" aria-labelledby="links-title">
+      <div class="section-heading">
+        <p class="kicker">public only</p>
+        <h2 id="links-title">Links</h2>
+      </div>
+      <div class="link-row">
+        {channels.map((channel) => (
+          <a href={channel.href} rel="me">
+            <strong>{channel.label}</strong>
+            <span>{channel.note}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <button class="close-button" type="button" data-close-modal aria-label="Close detail">×</button>
+      <img id="modal-image" alt="" />
+      <p id="modal-tag" class="kicker"></p>
+      <h2 id="modal-title"></h2>
+      <p id="modal-detail"></p>
+    </div>
+  </div>
+
+  <div class="modal" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+    <div class="modal-panel lightbox-panel">
+      <button class="close-button" type="button" data-close-lightbox aria-label="Close image">×</button>
+      <img id="lightbox-image" alt="" />
+    </div>
+  </div>
+
+  <script src="/yougif-site/scripts/site.js" is:inline></script>
+</BaseLayout>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620">
+  <rect width="900" height="620" fill="#101620"/>
+  <rect x="70" y="84" width="760" height="394" rx="30" fill="#080a0f" stroke="#2b3542" stroke-width="5"/>
+  <rect x="112" y="128" width="486" height="286" rx="18" fill="#17202b"/>
+  <rect x="630" y="128" width="158" height="64" rx="16" fill="#ff5b61"/>
+  <rect x="630" y="218" width="158" height="64" rx="16" fill="#58d7f7"/>
+  <rect x="630" y="308" width="158" height="64" rx="16" fill="#b7f26d"/>
+  <path d="M160 360 285 216l92 74 82-102 100 172H160Z" fill="#58d7f7"/>
+  <circle cx="240" cy="194" r="40" fill="#b7f26d"/>
+  <text x="72" y="548" fill="#f7f8fb" font-family="Arial, sans-serif" font-size="58" font-weight="900">BROADCAST KIT</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900">
+  <rect width="720" height="900" fill="#17202b"/>
+  <rect x="70" y="70" width="580" height="760" rx="32" fill="#080a0f" stroke="#58d7f7" stroke-width="6"/>
+  <path d="M130 610 280 350l112 148 92-116 106 228H130Z" fill="#58d7f7"/>
+  <circle cx="475" cy="240" r="62" fill="#b7f26d"/>
+  <rect x="130" y="674" width="460" height="70" rx="18" fill="#ff5b61"/>
+  <text x="154" y="724" fill="#f7f8fb" font-family="Arial, sans-serif" font-size="42" font-weight="900">SHORT COVER</text>
+</svg>
