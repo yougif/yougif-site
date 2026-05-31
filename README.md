@@ -2,6 +2,9 @@
 
 Independent creator and project site for Yougif.
 
+Production URL: https://yougif-site.pages.dev/
+Fallback preview: https://yougif.github.io/yougif-site/
+
 ## Local Commands
 
 ```powershell
