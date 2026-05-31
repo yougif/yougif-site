@@ -3,7 +3,7 @@
 Independent creator and project site for Yougif.
 
 Production URL: https://yougif-site.pages.dev/
-Fallback preview: https://yougif.github.io/yougif-site/
+Legacy fallback redirect: https://yougif.github.io/yougif-site/
 
 ## Local Commands
 
@@ -12,6 +12,7 @@ npm install
 npm run dev
 npm run build
 npm run build:cloudflare
+npm run build:github-redirect
 npm run validate
 ```
 
@@ -25,7 +26,7 @@ The operating target is Astro on Cloudflare Pages/Workers:
 - D1 is reserved for public project/gallery/link metadata.
 - R2 is reserved for larger media assets.
 
-GitHub remains the source repository. GitHub Pages may exist as a fallback preview, but Cloudflare is the intended production path.
+GitHub remains the source repository. GitHub Pages is redirect-only legacy compatibility; it must not serve the real site content. Cloudflare is the canonical production path.
 
 See `docs/cloudflare.md` for setup and deployment commands.
 
