@@ -228,6 +228,31 @@ h2 {
   line-height: 1.6;
 }
 
+.origin-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.origin-links a {
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(88, 215, 247, 0.4);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  color: var(--cyan);
+  font-size: 0.9rem;
+  font-weight: 800;
+  background: rgba(6, 8, 13, 0.4);
+}
+
+.origin-links a:hover,
+.origin-links a:focus-visible {
+  border-color: var(--lime);
+  color: var(--text);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));

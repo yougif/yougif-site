@@ -40,6 +40,11 @@ import { channels, gallery, origin, profile, projects, workflow } from "../data/
         <ul>
           {origin.points.map((point) => <li>{point}</li>)}
         </ul>
+        <div class="origin-links" aria-label="Origin references">
+          {origin.references.map((reference) => (
+            <a href={reference.href}>{reference.label}</a>
+          ))}
+        </div>
       </div>
     </section>
 

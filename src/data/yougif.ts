@@ -16,13 +16,23 @@ export const profile = {
 
 export const origin = {
   kicker: "why this exists",
-  title: "왜 유기프 사이트를 따로 만들었나",
+  title: "왜 지금 VRC Boxing에 투자하나",
   body:
-    "유기프 활동은 단순 링크 모음이 아니라 방송 대기화면, VRChat 아바타, PUBG 반응, Relay Vanguard 훈련, Shorts 자동화가 계속 이어지는 운영 흐름이다. 플랫폼마다 흩어진 채널과 이미지 자산을 한눈에 보여주고, 다음 콘텐츠 제작자가 기준을 잃지 않도록 독립 사이트로 분리했다.",
+    "유기프 사이트는 단순 포트폴리오가 아니라, VRC Boxing과 VR 동작 인식 격투 콘텐츠가 더 커질 것이라는 판단 위에서 만든 운영 거점이다. VRC Boxing 월드의 성장, 공식 이벤트와 한국 참가 흐름, 버추얼 태권도처럼 VR 기반 스포츠가 제도권 이벤트로 확장되는 신호를 보고 Relay Vanguard와 숏폼 자동화에 먼저 투자한다.",
   points: [
-    "YouTube, 치지직, SOOP, Twitch, CIME, Instagram, X에 흩어진 공개 채널을 한 허브로 묶는다.",
-    "Relay Vanguard와 개인 방송을 섞어 보이게 하되, 팀 운영과 유기프 방송 정체성을 구분한다.",
-    "이미지 생성과 숏폼 자동화가 반복될 때 공식 로고, 캐릭터, 대기화면 기준을 잃지 않게 한다."
+    "VRC Boxing은 이미 VRChat 안에서 지속적으로 업데이트되고 이벤트가 이어지는 활동 영역이다.",
+    "한국 VRC Boxing은 큰 이벤트는 있지만 상시 운영되는 방송 친화형 팀/채널은 아직 부족하다.",
+    "그래서 Relay Vanguard, 유기프 방송, Shorts/Reels 자동화를 하나의 크리에이터 운영 체계로 묶는다."
+  ],
+  references: [
+    {
+      label: "VRC Boxing research notes",
+      href: "https://github.com/yougif/vtuber-shorts/blob/main/docs/RESEARCH.md"
+    },
+    {
+      label: "VR sports market signal",
+      href: "https://www.yna.co.kr/view/AKR20260521039851073"
+    }
   ]
 };
 
