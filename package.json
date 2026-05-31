@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
+    "dev:cloudflare": "wrangler pages dev dist --compatibility-date=2025-12-01",
     "build": "astro build",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy dist --project-name yougif-site",
     "preview": "astro preview --host 127.0.0.1",
     "validate": "node scripts/validate-site.mjs"
   },
@@ -13,5 +16,9 @@
     "@astrojs/check": "^0.9.4",
     "astro": "^5.9.3",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260531.1",
+    "wrangler": "^4.95.0"
   }
 }

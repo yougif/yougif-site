@@ -8,8 +8,23 @@ Independent creator and project site for Yougif.
 npm install
 npm run dev
 npm run build
+npm run build:cloudflare
 npm run validate
 ```
+
+## Deployment Direction
+
+The operating target is Astro on Cloudflare Pages/Workers:
+
+- Astro builds the public visual site.
+- Cloudflare Pages serves the static frontend.
+- Pages Functions expose only the dynamic endpoints that need serverless runtime.
+- D1 is reserved for public project/gallery/link metadata.
+- R2 is reserved for larger media assets.
+
+GitHub remains the source repository. GitHub Pages may exist as a fallback preview, but Cloudflare is the intended production path.
+
+See `docs/cloudflare.md` for setup and deployment commands.
 
 ## Scope
 

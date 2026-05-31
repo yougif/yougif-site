@@ -1,6 +1,8 @@
 ---
 const { title = "Yougif", description = "Creator projects, gallery, workflow, and automation." } = Astro.props;
 import "../styles/global.css";
+
+const favicon = `${import.meta.env.BASE_URL}favicon.svg`;
 ---
 <!doctype html>
 <html lang="ko">
@@ -9,7 +11,7 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="/yougif-site/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={favicon} />
   </head>
   <body>
     <slot />

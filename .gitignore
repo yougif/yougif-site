@@ -4,6 +4,7 @@ dist/
 .astro/
 private/
 *.sqlite
+.wrangler/
 .env
 .env.*
 !.env.example
