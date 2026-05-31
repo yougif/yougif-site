@@ -7,7 +7,7 @@ The Yougif site is an Astro static frontend with Cloudflare Pages Functions for 
 - Static pages and media are built into `dist/`.
 - `functions/api/status.ts` is the first Pages Function endpoint.
 - D1 is reserved for public project, gallery, and link metadata.
-- R2 is reserved for large public media assets and future private source separation.
+- R2 is reserved for later large media storage. It is not enabled yet because it requires adding the R2 subscription to the Cloudflare account.
 
 ## Local Commands
 
@@ -31,14 +31,19 @@ Use the Yougif Cloudflare account only.
 npm.cmd exec wrangler login
 npm.cmd exec wrangler pages project create yougif-site --production-branch master
 npm.cmd exec wrangler d1 create yougif-site
-npm.cmd exec wrangler r2 bucket create yougif-media
 ```
 
-After D1/R2 creation, add the real binding IDs to `wrangler.toml`, then run:
+After D1 creation, add the real binding ID to `wrangler.toml`, then run:
 
 ```powershell
 npm.cmd exec wrangler d1 migrations apply yougif-site --remote
 npm.cmd run deploy:cloudflare
+```
+
+Enable R2 later only after approving the Cloudflare R2 subscription prompt:
+
+```powershell
+npm.cmd exec wrangler r2 bucket create yougif-media
 ```
 
 Do not commit local tokens, API keys, cookies, private asset paths, or local SQLite files.
