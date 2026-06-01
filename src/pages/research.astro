@@ -11,60 +11,60 @@ const lilpaArticle =
   "https://vrcboxing.com/2026/02/06/%E8%B3%9E%E9%87%91100%E4%B8%87%E5%86%86%E8%A6%8F%E6%A8%A1-%E7%B7%8F%E8%A6%96%E8%81%B4%E8%80%85%E6%95%B08%E4%B8%87%E4%BA%BA-%E9%9F%93%E5%9B%BD%E3%81%AEvtuber%E4%B8%BB%E5%82%AC%E3%81%AE%E5%A4%A7/";
 
 const metrics = [
-  ["120", "Vket2025Winter special tournament applicants"],
-  ["20+4", "qualifiers plus invited guests"],
-  ["12", "main-stage matches"],
-  ["8 teams", "Lilpa Boxing tournament structure"],
-  ["5 days", "training period before the Lilpa event"],
-  ["80k+", "reported total viewers / visitors for Lilpa Boxing"]
+  ["120명", "Vket2025Winter 특별대회 지원자"],
+  ["20+4명", "본선 참가자 20명 + 초청 게스트 4명"],
+  ["12경기", "Vket2025Winter 본선 매치"],
+  ["8팀", "릴파 복싱 팀 대진 구조"],
+  ["5일", "릴파 복싱 본선 전 훈련 기간"],
+  ["8만+", "릴파 복싱 총 시청자 규모"]
 ];
 
 const evidenceCards = [
   {
-    title: "Official VRC Boxing Hub",
-    tag: "official",
+    title: "VRC Boxing 공식 사이트",
+    tag: "공식 허브",
     image: "https://vrcboxing.com/wp-content/uploads/2024/02/og_img.png",
     body:
-      "공식 사이트는 VRC Boxing을 VRChat 기반 복싱 게임/대회 생태계로 정리하고, HOW TO PLAY와 NEWS를 통해 규칙과 이벤트를 계속 갱신한다.",
+      "게임 규칙, 대회 소식, 공식 채널이 모여 있는 출발점이다. VRC Boxing이 단순 월드가 아니라 운영되는 종목이라는 점을 보여준다.",
     href: "https://vrcboxing.com/"
   },
   {
-    title: "Vket2025Winter Special Tournament",
-    tag: "event scale",
+    title: "Vket2025Winter 특별대회",
+    tag: "대회 규모",
     image: "https://vrcboxing.com/wp-content/uploads/2026/02/930946be39556ebc686ea689c3061fa1.png",
     body:
-      "공식 뉴스 기준, Vket2025Winter 특별대회는 지원자 120명, 3개 부문, 본선 12경기, VR 관련 협찬 상품을 갖춘 행사로 공개됐다.",
+      "지원자 120명, 본선 12경기, VR 관련 협찬까지 붙은 공식 대회다. 관전용 콘텐츠로 커질 수 있는 구조가 이미 보인다.",
     href: vketArticle
   },
   {
-    title: "Lilpa Boxing Tournament",
-    tag: "korea signal",
+    title: "릴파 복싱 대회",
+    tag: "한국 사례",
     image: "https://vr-lifemagazine.com/wp-content/uploads/2025/11/VRChat_2025-11-22_20-38-28.614_3840x2160-1024x576.jpg",
     body:
-      "릴파 복싱은 한국 VTuber/스트리머 흐름과 VRC Boxing이 연결된 사례다. 공식 VRC Boxing 뉴스와 Virtual Life Magazine 모두 대회 규모와 팀 훈련 구조를 다뤘다.",
+      "한국 스트리머 이벤트와 VRC Boxing이 만난 사례다. 팀을 뽑고, 훈련하고, 본선을 치르는 흐름이 방송 콘텐츠와 잘 맞는다.",
     href: lilpaArticle
   }
 ];
 
 const modes = [
-  ["Esports", "HP / STA / GUA", "자원 관리, 가드, 헤비펀치와 메가펀치 타이밍이 관전 포인트가 된다."],
-  ["Real", "2 min / 3-down TKO", "폼, 너클 포인트, 실제 복싱에 가까운 판정이 훈련 콘텐츠로 이어진다."]
+  ["게임 룰", "HP / STA / GUA", "체력, 스태미나, 가드가 보이기 때문에 시청자가 경기 흐름을 따라가기 쉽다."],
+  ["실전 룰", "2분 / 3다운 TKO", "폼과 정확한 타격이 중요해서 훈련 과정 자체가 콘텐츠가 된다."]
 ];
 
 const relayPlan = [
-  ["Practice", "짧게 치고 바로 복귀하는 좁은 공간용 기본기"],
-  ["Broadcast", "다운, 회피, 가드 복귀, 코칭 장면을 방송 친화적으로 정리"],
-  ["Shorts", "훈련 전후 변화와 한 기술 한 클립 구조로 Reels/Shorts화"],
-  ["Archive", "공식 자료, 대회 영상, 팀 활동 기록을 분리해서 쌓기"]
+  ["연습", "좁은 방에서도 가능한 짧은 펀치와 빠른 가드 복귀를 훈련한다."],
+  ["방송", "다운, 회피, 가드 복귀, 코칭 장면처럼 바로 이해되는 순간을 보여준다."],
+  ["숏폼", "한 기술, 한 변화, 한 장면을 Reels와 Shorts에 맞게 짧게 자른다."],
+  ["기록", "공식 자료, 대회 영상, 팀 활동 기록을 분리해서 계속 쌓는다."]
 ];
 ---
-<BaseLayout title="Yougif | VRC Boxing Research Digest" description="Visual digest of VRC Boxing signals for Yougif and Relay Vanguard.">
+<BaseLayout title="Yougif | VRC Boxing" description="VRC Boxing 흐름과 Relay Vanguard 운영 방향.">
   <header class="site-header">
     <a class="brand" href={base}>Yougif</a>
     <nav aria-label="Research navigation">
       <a href={`${base}#origin`}>Why</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#media">Media</a>
+      <a href="#evidence">근거</a>
+      <a href="#media">영상</a>
       <a href="#relay">Relay</a>
       <a href={`${base}#links`}>Links</a>
     </nav>
@@ -73,7 +73,7 @@ const relayPlan = [
   <main class="research-page">
     <section class="section research-hero visual-research-hero" aria-labelledby="research-title">
       <div>
-        <p class="kicker">vrc boxing signal</p>
+        <p class="kicker">VRC Boxing 흐름</p>
         <h1 id="research-title">VR 링 위에서 커지는 흐름</h1>
         <p class="lead">
           VRC Boxing은 경기, 훈련, 방송, 숏폼으로 이어지는 VRChat 기반 스포츠 콘텐츠다.
@@ -85,14 +85,14 @@ const relayPlan = [
           src="https://vrcboxing.com/wp-content/uploads/2026/02/930946be39556ebc686ea689c3061fa1.png"
           alt="VRC Boxing Vket2025Winter special tournament visual"
         />
-        <figcaption>Official VRC Boxing event signal</figcaption>
+        <figcaption>공식 VRC Boxing 대회 자료</figcaption>
       </figure>
     </section>
 
     <section class="section research-panel" aria-labelledby="scoreboard-title">
       <div class="section-heading">
-        <p class="kicker">why it matters</p>
-        <h2 id="scoreboard-title">숫자로 보는 신호</h2>
+        <p class="kicker">한눈에 보는 규모</p>
+        <h2 id="scoreboard-title">왜 지금 볼 만한가</h2>
       </div>
       <div class="scoreboard">
         {metrics.map(([value, label]) => (
@@ -106,7 +106,7 @@ const relayPlan = [
 
     <section class="section research-panel" id="evidence" aria-labelledby="evidence-title">
       <div class="section-heading">
-        <p class="kicker">public evidence</p>
+        <p class="kicker">공개 자료</p>
         <h2 id="evidence-title">VRC Boxing이 이미 보여준 것</h2>
       </div>
       <div class="evidence-grid">
@@ -123,8 +123,8 @@ const relayPlan = [
 
     <section class="section research-panel" id="media" aria-labelledby="media-title">
       <div class="section-heading">
-        <p class="kicker">watch the format</p>
-        <h2 id="media-title">영상으로 보는 구조</h2>
+        <p class="kicker">영상 자료</p>
+        <h2 id="media-title">어떻게 방송이 되는가</h2>
       </div>
       <div class="media-showcase">
         <article class="video-card">
@@ -137,7 +137,7 @@ const relayPlan = [
           ></iframe>
           <div>
             <strong>Vket2025Winter 본선</strong>
-            <p>VRC Boxing 공식 뉴스에 임베드된 YouTube 경기 영상. 대회 운영, 카메라, 관전 포맷을 볼 수 있다.</p>
+            <p>공식 뉴스에 올라온 경기 영상이다. 대회 운영, 카메라, 관전 화면이 어떻게 보이는지 바로 확인할 수 있다.</p>
           </div>
         </article>
         <article class="video-card">
@@ -150,7 +150,7 @@ const relayPlan = [
           ></iframe>
           <div>
             <strong>릴파 복싱 1일차</strong>
-            <p>공식 VRC Boxing 뉴스가 연결한 SOOP 아카이브. 한국 스트리머 이벤트가 VRC Boxing과 만난 사례다.</p>
+            <p>한국 스트리머 이벤트가 VRC Boxing과 만난 사례다. 팀 구성과 본선 분위기를 볼 수 있다.</p>
           </div>
         </article>
         <article class="video-card">
@@ -163,7 +163,7 @@ const relayPlan = [
           ></iframe>
           <div>
             <strong>릴파 복싱 2일차</strong>
-            <p>팀 단위 훈련과 본선 서사가 VRC Boxing 콘텐츠를 단발 이벤트 이상으로 확장할 수 있음을 보여준다.</p>
+            <p>팀 훈련과 본선 서사가 이어지면 VRC Boxing이 단발 이벤트를 넘어 시리즈 콘텐츠가 될 수 있다.</p>
           </div>
         </article>
       </div>
@@ -171,7 +171,7 @@ const relayPlan = [
 
     <section class="section research-panel" aria-labelledby="rules-title">
       <div class="section-heading">
-        <p class="kicker">how to play</p>
+        <p class="kicker">규칙이 콘텐츠가 되는 이유</p>
         <h2 id="rules-title">콘텐츠가 되는 규칙</h2>
       </div>
       <div class="mode-grid">
@@ -187,8 +187,8 @@ const relayPlan = [
 
     <section class="section research-panel" id="relay" aria-labelledby="relay-title">
       <div class="section-heading">
-        <p class="kicker">relay vanguard translation</p>
-        <h2 id="relay-title">유기프가 할 일</h2>
+        <p class="kicker">Relay Vanguard 방향</p>
+        <h2 id="relay-title">이 흐름을 어떻게 가져갈까</h2>
       </div>
       <ol class="relay-timeline">
         {relayPlan.map(([title, body]) => (
@@ -202,17 +202,17 @@ const relayPlan = [
 
     <section class="section research-panel" aria-labelledby="refs-title">
       <div class="section-heading">
-        <p class="kicker">source shelf</p>
+        <p class="kicker">자료 링크</p>
         <h2 id="refs-title">더 깊게 보기</h2>
       </div>
       <div class="origin-links">
-        <a href="https://github.com/yougif/vtuber-shorts/blob/main/docs/RESEARCH.md">Research archive</a>
-        <a href="https://vrcboxing.com/">VRC Boxing official site</a>
-        <a href="https://vrcboxing.com/howto/">VRC Boxing HOW TO PLAY</a>
-        <a href={vketArticle}>Vket2025Winter official news</a>
-        <a href={lilpaArticle}>Lilpa Boxing official news</a>
-        <a href="https://vr-lifemagazine.com/vrc_lilpa-boxing_2025/">Lilpa Boxing feature article</a>
-        <a href="https://www.yna.co.kr/view/AKR20260521039851073">Supplemental VR sports signal</a>
+        <a href="https://github.com/yougif/vtuber-shorts/blob/main/docs/RESEARCH.md">리서치 원문</a>
+        <a href="https://vrcboxing.com/">VRC Boxing 공식 사이트</a>
+        <a href="https://vrcboxing.com/howto/">VRC Boxing 규칙 설명</a>
+        <a href={vketArticle}>Vket2025Winter 공식 뉴스</a>
+        <a href={lilpaArticle}>릴파 복싱 공식 뉴스</a>
+        <a href="https://vr-lifemagazine.com/vrc_lilpa-boxing_2025/">릴파 복싱 소개 기사</a>
+        <a href="https://www.yna.co.kr/view/AKR20260521039851073">VR 스포츠 흐름 기사</a>
       </div>
     </section>
   </main>
