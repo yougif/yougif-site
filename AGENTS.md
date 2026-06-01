@@ -2,13 +2,13 @@
 
 ## Identity Separation
 
-This repository is for the independent Yougif creator/project site only.
+This repository is for the independent Yougif broadcast and VRC Boxing site only.
 
 Do not add:
 
 - real-name professional career material
-- company career or professional portfolio content
-- links to unrelated personal/professional portfolio sites or generator projects
+- company career content
+- links to unrelated personal career sites or generator projects
 - tokens, API keys, cookies, OAuth secrets, or private key material
 
 ## GitHub Account Rules
@@ -21,7 +21,7 @@ Do not add:
 
 ## Site Goal
 
-Build a visual creator/project site, not a wiki-style documentation site.
+Build a visual broadcast/team site, not a wiki-style documentation site.
 
 Required sections:
 

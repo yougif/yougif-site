@@ -1,6 +1,6 @@
 # Yougif Site
 
-Independent creator and project site for Yougif.
+Independent broadcast and VRC Boxing hub for Yougif.
 
 Production URL: https://yougif.pages.dev/
 Legacy fallback redirect: https://yougif.github.io/yougif-site/
@@ -32,4 +32,4 @@ See `docs/cloudflare.md` for setup and deployment commands.
 
 ## Scope
 
-This site is visual-first. It presents creator identity, projects, gallery items, workflow, automation, and public links without mixing in unrelated professional portfolio material.
+This site is visual-first. It presents Yougif broadcast identity, Relay Vanguard, VRC Boxing signals, gallery items, workflow, automation, and public links without mixing in unrelated personal career material.

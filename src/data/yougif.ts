@@ -18,7 +18,7 @@ export const origin = {
   kicker: "why this exists",
   title: "왜 지금 VRC Boxing에 투자하나",
   body:
-    "유기프 사이트는 단순 포트폴리오가 아니라, VRC Boxing과 VR 동작 인식 격투 콘텐츠가 더 커질 것이라는 판단 위에서 만든 운영 거점이다. VRC Boxing 월드의 성장, 공식 이벤트와 한국 참가 흐름, 버추얼 태권도처럼 VR 기반 스포츠가 제도권 이벤트로 확장되는 신호를 보고 Relay Vanguard와 숏폼 자동화에 먼저 투자한다.",
+    "VRC Boxing과 VR 동작 인식 격투 콘텐츠는 경기, 훈련, 방송, 숏폼으로 이어질 수 있는 흐름을 만들고 있다. 유기프는 이 흐름이 더 커질 것으로 보고 Relay Vanguard 팀 운영과 숏폼 자동화에 먼저 투자한다.",
   points: [
     "VRC Boxing은 이미 VRChat 안에서 지속적으로 업데이트되고 이벤트가 이어지는 활동 영역이다.",
     "한국 VRC Boxing은 큰 이벤트는 있지만 상시 운영되는 방송 친화형 팀/채널은 아직 부족하다.",
