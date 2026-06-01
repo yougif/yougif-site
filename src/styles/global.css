@@ -393,6 +393,62 @@ h2 {
   padding-bottom: 5rem;
 }
 
+.research-page {
+  overflow: hidden;
+}
+
+.research-hero {
+  min-height: auto;
+  display: grid;
+  gap: 1rem;
+  padding-top: clamp(3rem, 10vw, 6rem);
+}
+
+.research-hero h1 {
+  max-width: 11ch;
+  font-size: clamp(2.7rem, 11vw, 6.2rem);
+}
+
+.research-panel {
+  padding-top: clamp(2rem, 7vw, 4rem);
+}
+
+.research-list,
+.research-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.research-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.research-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.research-grid article {
+  display: grid;
+  gap: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 1rem;
+}
+
+.research-grid strong {
+  color: var(--cyan);
+  font-size: 1.15rem;
+}
+
+.research-grid p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .link-row a {
   align-items: flex-start;
   flex-direction: column;

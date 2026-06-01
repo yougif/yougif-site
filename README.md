@@ -2,7 +2,7 @@
 
 Independent creator and project site for Yougif.
 
-Production URL: https://yougif-site.pages.dev/
+Production URL: https://yougif.pages.dev/
 Legacy fallback redirect: https://yougif.github.io/yougif-site/
 
 ## Local Commands

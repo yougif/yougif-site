@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const outputDir = join(process.cwd(), "dist-github-pages");
-const canonical = "https://yougif-site.pages.dev";
+const canonical = "https://yougif.pages.dev";
 const legacyBase = "/yougif-site";
 
 mkdirSync(outputDir, { recursive: true });

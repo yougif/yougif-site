@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const signals = [
+  "VRC Boxing은 VRChat 안에서 경기, 훈련, 이벤트를 계속 만들 수 있는 활동형 콘텐츠다.",
+  "VR 동작 인식 기반 격투 스포츠는 기사와 공식 이벤트를 통해 더 넓은 시장 신호를 만들고 있다.",
+  "한국어권에서는 큰 이벤트 이후에도 반복 가능한 팀 훈련, 방송, Shorts 운영 체계가 중요하다."
+];
+
+const directions = [
+  ["Team", "Relay Vanguard를 방송 친화형 VRC Boxing 팀으로 운영한다."],
+  ["Shorts", "훈련 장면, 다운 장면, 전후 변화, 짧은 기술 설명을 세로형 콘텐츠로 만든다."],
+  ["Automation", "녹화본에서 후보 장면을 찾고, 썸네일과 공개 링크까지 이어지는 파이프라인을 만든다."]
+];
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="Yougif | VRC Boxing Research Notes" description="Yougif VRC Boxing research summary and operating thesis.">
+  <header class="site-header">
+    <a class="brand" href={base}>Yougif</a>
+    <nav aria-label="Research navigation">
+      <a href={`${base}#origin`}>Why</a>
+      <a href={`${base}#projects`}>Projects</a>
+      <a href={`${base}#gallery`}>Gallery</a>
+      <a href={`${base}#links`}>Links</a>
+    </nav>
+  </header>
+
+  <main class="research-page">
+    <section class="section research-hero" aria-labelledby="research-title">
+      <p class="kicker">research notes</p>
+      <h1 id="research-title">VRC Boxing에 먼저 투자하는 이유</h1>
+      <p class="lead">
+        유기프 사이트는 단순한 정적 소개 페이지가 아니라, VRC Boxing과 VR 동작 인식 격투 콘텐츠가
+        더 커질 것이라는 판단을 공개적으로 정리하는 운영 허브다.
+      </p>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="signals-title">
+      <div class="section-heading">
+        <p class="kicker">market signal</p>
+        <h2 id="signals-title">판단 근거</h2>
+      </div>
+      <ul class="research-list">
+        {signals.map((signal) => <li>{signal}</li>)}
+      </ul>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="direction-title">
+      <div class="section-heading">
+        <p class="kicker">operating direction</p>
+        <h2 id="direction-title">운영 방향</h2>
+      </div>
+      <div class="research-grid">
+        {directions.map(([title, body]) => (
+          <article>
+            <strong>{title}</strong>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="refs-title">
+      <div class="section-heading">
+        <p class="kicker">public references</p>
+        <h2 id="refs-title">공개 참고 링크</h2>
+      </div>
+      <div class="origin-links">
+        <a href="https://github.com/yougif/vtuber-shorts/blob/main/docs/RESEARCH.md">Full research document</a>
+        <a href="https://www.yna.co.kr/view/AKR20260521039851073">VR sports market signal</a>
+        <a href={base}>Back to Yougif site</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

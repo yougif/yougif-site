@@ -9,7 +9,7 @@
     "build": "astro build",
     "build:cloudflare": "node scripts/build-cloudflare.mjs",
     "build:github-redirect": "node scripts/build-github-redirect.mjs",
-    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy dist --project-name yougif-site",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy dist --project-name yougif",
     "preview": "astro preview --host 127.0.0.1",
     "validate": "node scripts/validate-site.mjs"
   },

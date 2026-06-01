@@ -29,7 +29,7 @@ Use the Yougif Cloudflare account only.
 
 ```powershell
 npm.cmd exec wrangler login
-npm.cmd exec wrangler pages project create yougif-site --production-branch master
+npm.cmd exec wrangler pages project create yougif --production-branch master
 npm.cmd exec wrangler d1 create yougif-site
 ```
 
@@ -39,6 +39,14 @@ After D1 creation, add the real binding ID to `wrangler.toml`, then run:
 npm.cmd exec wrangler d1 migrations apply yougif-site --remote
 npm.cmd run deploy:cloudflare
 ```
+
+Canonical production URL:
+
+```text
+https://yougif.pages.dev/
+```
+
+The older `yougif-site.pages.dev` deployment is legacy compatibility only.
 
 Enable R2 later only after approving the Cloudflare R2 subscription prompt:
 

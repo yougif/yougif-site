@@ -27,7 +27,7 @@ export const origin = {
   references: [
     {
       label: "VRC Boxing research notes",
-      href: "https://github.com/yougif/vtuber-shorts/blob/main/docs/RESEARCH.md"
+      href: `${base}research/`
     },
     {
       label: "VR sports market signal",
