@@ -7,15 +7,15 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   : `${import.meta.env.BASE_URL}/`;
 const siteScript = `${base}scripts/site.js`;
 ---
-<BaseLayout title="Yougif | Broadcast Hub">
+<BaseLayout title="Yougif | 방송 허브">
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Yougif home">Yougif</a>
-    <nav aria-label="Primary navigation">
-      <a href="#projects">Projects</a>
-      <a href="#origin">Why</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#links">Links</a>
+    <a class="brand" href="#top" aria-label="유기프 홈">Yougif</a>
+    <nav aria-label="주요 메뉴">
+      <a href="#projects">프로젝트</a>
+      <a href="#origin">이유</a>
+      <a href="#gallery">갤러리</a>
+      <a href="#workflow">흐름</a>
+      <a href="#links">링크</a>
     </nav>
   </header>
 
@@ -26,12 +26,12 @@ const siteScript = `${base}scripts/site.js`;
         <h1 id="hero-title">{profile.headline}</h1>
         <p class="lead">{profile.lead}</p>
         <div class="hero-actions">
-          <a class="button primary" href="#projects">View projects</a>
-          <a class="button ghost" href="#links">Channels</a>
+          <a class="button primary" href="#projects">프로젝트 보기</a>
+          <a class="button ghost" href="#links">채널 보기</a>
         </div>
       </div>
-      <div class="hero-visual" aria-label="Yougif visual identity panel">
-        <img src={profile.heroImage} alt="Yougif broadcast waiting screen" />
+      <div class="hero-visual" aria-label="유기프 대표 비주얼">
+        <img src={profile.heroImage} alt="유기프 방송 대기화면" />
       </div>
     </section>
 
@@ -45,7 +45,7 @@ const siteScript = `${base}scripts/site.js`;
         <ul>
           {origin.points.map((point) => <li>{point}</li>)}
         </ul>
-        <div class="origin-links" aria-label="Origin references">
+        <div class="origin-links" aria-label="참고 자료">
           {origin.references.map((reference) => (
             <a href={reference.href}>{reference.label}</a>
           ))}
@@ -55,8 +55,8 @@ const siteScript = `${base}scripts/site.js`;
 
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-heading">
-        <p class="kicker">selected work</p>
-        <h2 id="projects-title">Projects</h2>
+        <p class="kicker">주요 활동</p>
+        <h2 id="projects-title">프로젝트</h2>
       </div>
       <div class="project-grid">
         {projects.map((project) => (
@@ -79,8 +79,8 @@ const siteScript = `${base}scripts/site.js`;
 
     <section class="section split" id="gallery" aria-labelledby="gallery-title">
       <div class="section-heading">
-        <p class="kicker">media wall</p>
-        <h2 id="gallery-title">Gallery</h2>
+        <p class="kicker">이미지 자료</p>
+        <h2 id="gallery-title">갤러리</h2>
       </div>
       <div class="gallery-grid">
         {gallery.map((item) => (
@@ -94,8 +94,8 @@ const siteScript = `${base}scripts/site.js`;
 
     <section class="section workflow" id="workflow" aria-labelledby="workflow-title">
       <div class="section-heading">
-        <p class="kicker">content flow</p>
-        <h2 id="workflow-title">Workflow</h2>
+        <p class="kicker">콘텐츠 흐름</p>
+        <h2 id="workflow-title">운영 흐름</h2>
       </div>
       <ol class="flow-list">
         {workflow.map(([step, title, body]) => (
@@ -106,23 +106,23 @@ const siteScript = `${base}scripts/site.js`;
 
     <section class="section automation" id="automation" aria-labelledby="automation-title">
       <div>
-        <p class="kicker">pipeline</p>
-        <h2 id="automation-title">Automation</h2>
+        <p class="kicker">자동화</p>
+        <h2 id="automation-title">자동화 파이프라인</h2>
         <p>방송은 여러 플랫폼에 흩어져 있고, 녹화본과 썸네일은 로컬에 쌓인다. 유기프 사이트는 그 흐름을 공개 링크, 갤러리, 자동화 기록으로 묶는 허브 역할을 한다.</p>
       </div>
-      <div class="pipeline" aria-label="Automation pipeline">
-        <span>Scan</span>
-        <span>Score</span>
-        <span>Render</span>
-        <span>Review</span>
-        <span>Publish</span>
+      <div class="pipeline" aria-label="자동화 파이프라인">
+        <span>스캔</span>
+        <span>점수화</span>
+        <span>렌더링</span>
+        <span>검토</span>
+        <span>공개</span>
       </div>
     </section>
 
     <section class="section links" id="links" aria-labelledby="links-title">
       <div class="section-heading">
-        <p class="kicker">public only</p>
-        <h2 id="links-title">Links</h2>
+        <p class="kicker">공개 링크</p>
+        <h2 id="links-title">채널 링크</h2>
       </div>
       <div class="link-row">
         {channels.map((channel) => (
@@ -137,7 +137,7 @@ const siteScript = `${base}scripts/site.js`;
 
   <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-panel">
-      <button class="close-button" type="button" data-close-modal aria-label="Close detail">×</button>
+      <button class="close-button" type="button" data-close-modal aria-label="상세 닫기">×</button>
       <img id="modal-image" alt="" />
       <p id="modal-tag" class="kicker"></p>
       <h2 id="modal-title"></h2>
@@ -145,9 +145,9 @@ const siteScript = `${base}scripts/site.js`;
     </div>
   </div>
 
-  <div class="modal" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+  <div class="modal" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="갤러리 이미지 미리보기">
     <div class="modal-panel lightbox-panel">
-      <button class="close-button" type="button" data-close-lightbox aria-label="Close image">×</button>
+      <button class="close-button" type="button" data-close-lightbox aria-label="이미지 닫기">×</button>
       <img id="lightbox-image" alt="" />
     </div>
   </div>

@@ -7,7 +7,7 @@ export const profile = {
   name: "Yougif",
   koreanName: "유기프",
   handle: "vrc_yougif",
-  kicker: "VTuber / VRChat / PUBG / VRC Boxing",
+  kicker: "버튜버 / VRChat / PUBG / VRC Boxing",
   headline: "유기프 방송실",
   lead:
     "PUBG 대기화면의 불꽃, VRChat 아바타, Relay Vanguard 링 위의 방송 친화 훈련을 하나의 크리에이터 허브로 묶는다.",
@@ -15,7 +15,7 @@ export const profile = {
 };
 
 export const origin = {
-  kicker: "why this exists",
+  kicker: "시작한 이유",
   title: "왜 지금 VRC Boxing에 투자하나",
   body:
     "VRC Boxing과 VR 동작 인식 격투 콘텐츠는 경기, 훈련, 방송, 숏폼으로 이어질 수 있는 흐름을 만들고 있다. 유기프는 이 흐름이 더 커질 것으로 보고 Relay Vanguard 팀 운영과 숏폼 자동화에 먼저 투자한다.",
@@ -26,11 +26,11 @@ export const origin = {
   ],
   references: [
     {
-      label: "VRC Boxing research notes",
+      label: "VRC Boxing 자료 보기",
       href: `${base}research/`
     },
     {
-      label: "VR sports market signal",
+      label: "VR 스포츠 흐름 기사",
       href: "https://www.yna.co.kr/view/AKR20260521039851073"
     }
   ]
@@ -40,7 +40,7 @@ export const projects = [
   {
     id: "relay",
     title: "Relay Vanguard",
-    tag: "VRC Boxing team",
+    tag: "VRC Boxing 팀",
     image: asset("assets/media/relay-thumbnail.png"),
     summary: "방송 친화형 VRC Boxing 팀 운영, 정기 연습, 팀 브랜딩.",
     detail:
@@ -48,8 +48,8 @@ export const projects = [
   },
   {
     id: "broadcast",
-    title: "Yougif Broadcast",
-    tag: "live identity",
+    title: "유기프 방송",
+    tag: "라이브 정체성",
     image: asset("assets/media/youtube-waiting.png"),
     summary: "유기프 아바타와 방송 대기화면을 중심으로 한 라이브 패키지.",
     detail:
@@ -57,8 +57,8 @@ export const projects = [
   },
   {
     id: "clips",
-    title: "Shorts Automation",
-    tag: "clip pipeline",
+    title: "숏폼 자동화",
+    tag: "클립 파이프라인",
     image: asset("assets/media/yougif-avatar.png"),
     summary: "녹화본에서 Shorts/Reels 후보를 뽑아 세로형 영상으로 정리.",
     detail:
@@ -69,38 +69,38 @@ export const projects = [
 export const gallery = [
   {
     src: asset("assets/media/pubg-waiting.png"),
-    alt: "Yougif PUBG waiting screen with avatar and Korean broadcast standby text",
-    label: "PUBG Waiting"
+    alt: "유기프 PUBG 방송 대기화면",
+    label: "PUBG 대기화면"
   },
   {
     src: asset("assets/media/youtube-waiting.png"),
-    alt: "Relay Vanguard YouTube waiting screen in a VRC Boxing ring",
-    label: "Relay Live"
+    alt: "VRC Boxing 링 위의 Relay Vanguard 방송 대기화면",
+    label: "Relay 라이브"
   },
   {
     src: asset("assets/media/yougif-avatar.png"),
-    alt: "Yougif avatar full body reference",
-    label: "Avatar"
+    alt: "유기프 아바타 전신 이미지",
+    label: "아바타"
   },
   {
     src: asset("assets/media/relay-thumbnail.png"),
-    alt: "Relay Vanguard stream thumbnail with boxing pose",
-    label: "Thumbnail"
+    alt: "복싱 포즈가 들어간 Relay Vanguard 방송 썸네일",
+    label: "썸네일"
   },
   {
     src: asset("assets/media/relay-vanguard-character.png"),
-    alt: "Relay Vanguard character transparent reference",
-    label: "Character"
+    alt: "Relay Vanguard 캐릭터 투명 이미지",
+    label: "캐릭터"
   },
   {
     src: asset("assets/media/relay-vanguard-logo.png"),
-    alt: "Relay Vanguard transparent shield logo",
-    label: "Logo"
+    alt: "Relay Vanguard 방패 로고",
+    label: "로고"
   },
   {
     src: asset("assets/media/relay-final-a4.jpg"),
-    alt: "Relay Vanguard final A4 ratio poster reference",
-    label: "A4 Poster"
+    alt: "Relay Vanguard A4 비율 포스터",
+    label: "A4 포스터"
   }
 ];
 
@@ -108,53 +108,53 @@ export const channels = [
   {
     label: "Yougif YouTube",
     href: "https://www.youtube.com/@%EC%9C%A0%EA%B8%B0%ED%94%84",
-    note: "main video and Shorts channel"
+    note: "유기프 영상과 Shorts 채널"
   },
   {
     label: "Relay Vanguard YouTube",
     href: "https://www.youtube.com/@RelayVanguard",
-    note: "VRC Boxing team channel"
+    note: "VRC Boxing 팀 채널"
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/vrc_yougif/",
-    note: "Reels and visual posts"
+    note: "Reels와 비주얼 게시물"
   },
   {
     label: "X",
     href: "https://x.com/vrc_yougif",
-    note: "VRChat and broadcast updates"
+    note: "VRChat과 방송 소식"
   },
   {
     label: "CHZZK",
     href: "https://chzzk.naver.com/9b3c8f69447bed843261721afb6a96f4",
-    note: "Korean live streaming"
+    note: "한국 라이브 방송"
   },
   {
     label: "SOOP",
     href: "https://www.sooplive.com/station/yougif",
-    note: "live and station page"
+    note: "라이브와 방송국"
   },
   {
     label: "Twitch",
     href: "https://www.twitch.tv/yougifu",
-    note: "Twitch presence"
+    note: "Twitch 채널"
   },
   {
     label: "CIME",
     href: "https://ci.me/@yougif",
-    note: "VOD and live hub"
+    note: "VOD와 라이브 허브"
   },
   {
     label: "GitHub",
     href: "https://github.com/yougif",
-    note: "project code"
+    note: "공개 코드"
   }
 ];
 
 export const workflow = [
-  ["01", "Broadcast", "치지직, YouTube, SOOP, CIME 등에서 라이브와 VOD를 만든다."],
-  ["02", "Archive", "OBS 녹화본과 썸네일, 대기화면, 팀 이미지를 소스 단위로 정리한다."],
-  ["03", "Clip", "PUBG 반응과 VRC Boxing 훈련 장면을 Shorts/Reels 후보로 자른다."],
-  ["04", "Publish", "플랫폼별 링크와 팀/개인 채널을 분리해 공개한다."]
+  ["01", "방송", "치지직, YouTube, SOOP, CIME 등에서 라이브와 VOD를 만든다."],
+  ["02", "정리", "OBS 녹화본과 썸네일, 대기화면, 팀 이미지를 소스 단위로 정리한다."],
+  ["03", "클립", "PUBG 반응과 VRC Boxing 훈련 장면을 Shorts/Reels 후보로 자른다."],
+  ["04", "공개", "플랫폼별 링크와 팀/개인 채널을 분리해 공개한다."]
 ];

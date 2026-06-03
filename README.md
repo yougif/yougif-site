@@ -1,6 +1,6 @@
 # Yougif Site
 
-Independent broadcast and VRC Boxing hub for Yougif.
+유기프 방송과 VRC Boxing 활동을 정리하는 독립 사이트.
 
 Production URL: https://yougif.pages.dev/
 Legacy fallback redirect: https://yougif.github.io/yougif-site/
@@ -32,4 +32,4 @@ See `docs/cloudflare.md` for setup and deployment commands.
 
 ## Scope
 
-This site is visual-first. It presents Yougif broadcast identity, Relay Vanguard, VRC Boxing signals, gallery items, workflow, automation, and public links without mixing in unrelated personal career material.
+이 사이트는 유기프 방송 정체성, Relay Vanguard, VRC Boxing 흐름, 갤러리, 운영 흐름, 자동화, 공개 링크를 시각적으로 보여준다. 관련 없는 개인 경력 자료는 섞지 않는다.

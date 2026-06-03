@@ -26,17 +26,17 @@ Build a visual broadcast/team site, not a wiki-style documentation site.
 Required sections:
 
 - Hero
-- Projects
-- Gallery
-- Workflow
-- Automation
-- Links
+- Projects / 프로젝트
+- Gallery / 갤러리
+- Workflow / 운영 흐름
+- Automation / 자동화
+- Links / 공개 링크
 
 Required behavior:
 
 - Mobile-first layout
 - Project cards open detail modals
-- Gallery remains readable on mobile and desktop
+- Gallery / 갤러리는 모바일과 데스크톱에서 모두 읽기 쉬워야 한다
 - Internal links work
 - Images are not broken
 - No horizontal overflow
