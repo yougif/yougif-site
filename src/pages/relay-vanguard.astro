@@ -16,6 +16,7 @@ const logoImage = `${base}assets/media/relay-vanguard-logo.png`;
 const posterImage = `${base}assets/media/relay-final-a4.jpg`;
 const shortsImage = `${base}assets/media/relay-example-shorts.png`;
 const characterImage = `${base}assets/media/relay-vanguard-character.png`;
+const avatarFor = (handle: string, provider = "x") => `https://unavatar.io/${provider}/${handle}`;
 
 const promotionLinks = [
   relayYoutube
@@ -35,28 +36,45 @@ const teamMembers = [
     role: "팀장",
     name: "유기프",
     body:
-      "Relay Vanguard 운영, 방송 세팅, 녹화본 정리, Shorts/Reels 검수 흐름을 맡는다. VRChat 안에서 훈련과 방송이 자연스럽게 이어지게 만드는 쪽에 집중한다.",
+      "Relay Vanguard 팀장. 팀 운영, 방송 세팅, 녹화본 정리, Shorts/Reels 검수 흐름을 맡고, 훈련 장면이 방송과 숏폼으로 이어지게 만든다.",
     href: "https://x.com/vrc_yougif",
-    cta: "유기프 X"
+    cta: "X",
+    avatar: logoImage,
+    badges: ["Leader", "Operation", "Coach"]
   },
   {
     role: "부팀장",
     name: "yeonmuzi_연무지",
     body:
-      "훈련 포스터 방향과 팀 비주얼의 중심 인물. 초보자도 들어오기 쉬운 연습 분위기와 Relay Vanguard의 팀 이미지를 함께 잡는다.",
+      "Relay Vanguard 부팀장. 훈련 포스터 방향과 팀 비주얼의 중심 인물이며, 초보자도 들어오기 쉬운 연습 분위기와 코칭 흐름을 함께 잡는다.",
     href: relayX?.href ?? "https://x.com/relay_vanguard",
-    cta: "팀 X"
+    cta: "팀 X",
+    avatar: characterImage,
+    badges: ["Vice Leader", "Operation", "Coach"]
   },
   {
     role: "팀원",
     name: "Katinor Rayner",
     body:
-      "카티노르님. Relay Vanguard 훈련과 팀 활동에 함께 참여하는 스트리머이며, 방송 링크와 활동 기록은 X 프로필에서 이어서 확인할 수 있다.",
+      "카티노르님. 호기심 많은 오토코노코 토끼, 버츄얼 아티스트로 소개되는 스트리머. Relay Vanguard 운영팀과 코치진으로 훈련 피드백과 팀 활동을 함께 이끈다.",
     href: "https://x.com/KatinorRayner",
     cta: "X",
+    avatar: avatarFor("KatinorRayner"),
     streamHref: "https://x.com/KatinorRayner",
     streamCta: "방송 링크",
-    badges: ["Streamer"]
+    badges: ["Streamer", "Operation", "Coach"]
+  },
+  {
+    role: "운영팀",
+    name: "Sandy",
+    body:
+      "네트워크 담당 엔지니어이자 디스코드 담당. Relay Vanguard 운영팀으로 훈련 공지, 커뮤니티 동선, 디스코드 운영 흐름을 지원한다.",
+    href: "https://x.com/sandy_it05",
+    cta: "X",
+    avatar: avatarFor("sandy_it05"),
+    streamHref: "https://x.com/sandy_it05",
+    streamCta: "디스코드 문의",
+    badges: ["Operation", "Network", "Discord"]
   },
   {
     role: "팀원",
@@ -86,9 +104,10 @@ const teamMembers = [
     role: "팀원",
     name: "도라",
     body:
-      "이도라님. 마작방송, 테이블탑 방송 등 여러 방송을 하는 스트리머이며, Relay Vanguard 팀 활동도 함께한다.",
+      "이도라님. 마작방송, 테이블탑 방송 등 여러 방송을 하는 스트리머. 마작을 배우고 싶은 사람에게 안내할 수 있는 친근한 방송/게임 진행자다.",
     href: "https://x.com/IngMajag",
     cta: "X",
+    avatar: avatarFor("IngMajag?fallback=false"),
     streamHref: "https://x.com/IngMajag",
     streamCta: "방송 링크",
     badges: ["Streamer"]
@@ -97,12 +116,13 @@ const teamMembers = [
     role: "팀원",
     name: "Rapiya",
     body:
-      "라피야님. VRC와 Boxing 활동을 중심으로 하는 스트리머이며, Relay Vanguard 훈련과 팀 활동 흐름을 함께 만든다.",
+      "라피야님. VRC Main, Boxing을 중심으로 활동하는 스트리머. Relay Vanguard 운영팀과 코치진으로 스파링 감각과 VRC Boxing 훈련 방향을 함께 잡는다.",
     href: "https://x.com/Rape_ya",
     cta: "X",
+    avatar: avatarFor("Rape_ya"),
     streamHref: "https://x.com/Rape_ya",
     streamCta: "방송 링크",
-    badges: ["Streamer"]
+    badges: ["Streamer", "Operation", "Coach"]
   }
 ];
 
@@ -163,7 +183,7 @@ const examples = [
 
 const contacts = [
   ["VRChat", "yougif 계정으로 문의", "VRChat에서 유기프에게 직접 문의"],
-  ["Discord", "디스코드 문의", "Relay Vanguard X DM 또는 VRChat에서 유기프에게 디스코드 문의"],
+  ["Discord", "Sandy 운영팀 문의", "https://x.com/sandy_it05"],
   ["X", "@relay_vanguard", relayX?.href ?? "https://x.com/relay_vanguard"]
 ];
 ---
@@ -226,6 +246,7 @@ const contacts = [
       <div class="relay-member-grid">
         {teamMembers.map((member) => (
           <article>
+            {member.avatar ? <img class="relay-member-avatar" src={member.avatar} alt={`${member.name} 프로필 이미지`} loading="lazy" /> : null}
             <span>{member.role}</span>
             <strong>{member.name}</strong>
             {member.badges?.length ? (
