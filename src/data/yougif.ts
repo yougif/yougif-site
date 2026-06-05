@@ -46,6 +46,7 @@ export const projects = [
     detail:
       "Relay Vanguard는 VRChat 복싱을 방송 가능한 오픈 스튜디오처럼 운영하는 프로젝트다. 팀 공지, 연습회, 하이라이트, YouTube 활동을 한 흐름으로 관리한다.",
     href: `${base}projects/relay-vanguard/`,
+    homeHref: `${base}relay-vanguard/`,
     intro:
       "Relay Vanguard는 VRC Boxing을 한국어 방송과 숏폼에 맞게 풀어내는 팀 프로젝트다. 단순 친목 모임이 아니라 훈련 공지, 팀 비주얼, 경기/스파링 기록, Shorts 하이라이트까지 연결되는 운영 단위로 만든다.",
     highlights: [

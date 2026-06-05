@@ -22,6 +22,7 @@ const channelByLabel = new Map(channels.map((channel) => [channel.label, channel
     <a class="brand" href={base}>Yougif</a>
     <nav aria-label="프로젝트 상세 메뉴">
       <a href={`${base}#projects`}>프로젝트</a>
+      <a href={`${base}relay-vanguard/`}>Relay</a>
       <a href={`${base}research/`}>Research</a>
       <a href={`${base}workflow/`}>Workflow</a>
       <a href={`${base}#links`}>링크</a>
@@ -34,6 +35,11 @@ const channelByLabel = new Map(channels.map((channel) => [channel.label, channel
         <p class="kicker">{project.tag}</p>
         <h1 id="project-title">{project.title}</h1>
         <p class="lead">{project.intro}</p>
+        {project.id === "relay" ? (
+          <div class="inline-actions">
+            <a class="button primary" href={`${base}relay-vanguard/`}>Relay Vanguard 홈</a>
+          </div>
+        ) : null}
       </div>
       <figure class="project-detail-cover">
         <img src={project.image} alt={`${project.title} 대표 이미지`} />

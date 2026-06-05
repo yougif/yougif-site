@@ -1,0 +1,201 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { channels } from "../data/yougif";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const channelByLabel = new Map(channels.map((channel) => [channel.label, channel]));
+const relayYoutube = channelByLabel.get("Relay Vanguard YouTube");
+const relayX = channelByLabel.get("Relay Vanguard X");
+const instagram = channelByLabel.get("Instagram");
+
+const heroImage = `${base}assets/media/relay-thumbnail.png`;
+const logoImage = `${base}assets/media/relay-vanguard-logo.png`;
+const posterImage = `${base}assets/media/relay-final-a4.jpg`;
+const shortsImage = `${base}assets/media/relay-example-shorts.png`;
+const characterImage = `${base}assets/media/relay-vanguard-character.png`;
+
+const operatingLoop = [
+  ["01", "공지", "X에서 훈련 시간, 참여 방식, 방송 가능 여부를 짧게 고지한다."],
+  ["02", "훈련", "VRChat Group+ 인스턴스에서 초보자도 들어올 수 있는 VRC Boxing 연습을 운영한다."],
+  ["03", "기록", "스파링과 피드백 장면을 방송/VOD/로컬 녹화본으로 남긴다."],
+  ["04", "숏폼", "좋은 장면을 15-30초 세로 영상으로 자르고 Shorts/Reels로 검수한다."],
+  ["05", "아카이브", "포스터, 썸네일, 공지, 하이라이트를 다음 모집과 방송 자료로 재사용한다."]
+];
+
+const principles = [
+  "좁은 공간에서도 통하는 짧은 복싱",
+  "크게 치지 말고, 짧게 맞히고, 바로 복귀",
+  "초보자 환영, 매너와 스포츠맨십 우선",
+  "방송과 녹화에 맞는 동선, 닉네임, 음성 노출 동의 확인"
+];
+
+const examples = [
+  {
+    label: "Shorts",
+    title: "훈련 장면을 세로 숏츠로 검수",
+    body: "로컬 녹화본에서 움직임과 대사가 살아있는 20초 안팎 구간을 뽑아 1080x1920 영상으로 만든다.",
+    image: shortsImage,
+    href: "https://www.youtube.com/shorts/4ZHtmbQDv18",
+    cta: "Shorts 보기"
+  },
+  {
+    label: "Notice",
+    title: "정기 연습회 공지",
+    body: "긴 설명보다 시간, 참가 방식, 방송 가능 여부를 빠르게 읽히는 팀 공지로 정리한다.",
+    image: posterImage,
+    href: "https://x.com/relay_vanguard/status/2037382268763992209",
+    cta: "X 공지 보기"
+  },
+  {
+    label: "Brand",
+    title: "팀 로고와 방송 비주얼",
+    body: "Relay Vanguard 방패 로고, 포스터, 썸네일을 같은 톤으로 묶어 팀 채널의 첫인상을 고정한다.",
+    image: logoImage,
+    href: relayX?.href ?? "https://x.com/relay_vanguard",
+    cta: "팀 X 보기"
+  }
+];
+---
+<BaseLayout
+  title="Relay Vanguard | VRC Boxing 방송팀"
+  description="Relay Vanguard는 한국어 VRC Boxing 훈련, 방송, Shorts/Reels를 연결하는 방송 친화형 VRChat 복싱 팀입니다."
+>
+  <header class="site-header">
+    <a class="brand" href={base}>Yougif</a>
+    <nav aria-label="Relay Vanguard 메뉴">
+      <a href={`${base}relay-vanguard/`}>Relay</a>
+      <a href="#loop">운영 흐름</a>
+      <a href="#examples">예시</a>
+      <a href="#channels">채널</a>
+      <a href={`${base}research/`}>Research</a>
+    </nav>
+  </header>
+
+  <main class="relay-home-page">
+    <section class="relay-home-hero" aria-labelledby="relay-title">
+      <div class="relay-hero-copy">
+        <p class="kicker">VRC Boxing Broadcast Team</p>
+        <h1 id="relay-title">Relay Vanguard</h1>
+        <p class="lead">
+          한국어 VRC Boxing 훈련, 방송, Shorts/Reels를 한 흐름으로 운영하는 VRChat 복싱 팀.
+          연습 장면이 공지, 라이브, 하이라이트, 다음 모집으로 이어지게 만든다.
+        </p>
+        <div class="hero-actions">
+          {relayYoutube ? <a class="button primary" href={relayYoutube.href}>YouTube</a> : null}
+          {relayX ? <a class="button ghost" href={relayX.href}>X 공지</a> : null}
+          <a class="button ghost" href="https://www.youtube.com/shorts/4ZHtmbQDv18">Shorts 샘플</a>
+        </div>
+      </div>
+      <div class="relay-hero-stage" aria-label="Relay Vanguard 대표 이미지">
+        <img class="relay-hero-main" src={heroImage} alt="Relay Vanguard VRC Boxing 썸네일" />
+        <img class="relay-hero-logo" src={logoImage} alt="Relay Vanguard 로고" />
+      </div>
+    </section>
+
+    <section class="relay-section relay-identity" aria-labelledby="identity-title">
+      <div class="section-heading">
+        <p class="kicker">Team Identity</p>
+        <h2 id="identity-title">방송팀으로 운영한다</h2>
+      </div>
+      <div class="relay-identity-grid">
+        <article>
+          <strong>훈련</strong>
+          <p>초보자도 들어올 수 있는 VRC Boxing 연습회를 열고, 짧은 펀치와 빠른 복귀를 반복 훈련한다.</p>
+        </article>
+        <article>
+          <strong>방송</strong>
+          <p>라이브와 녹화에 맞게 화면, 음성, 닉네임 노출을 정리하고 방송 가능한 분위기를 만든다.</p>
+        </article>
+        <article>
+          <strong>숏폼</strong>
+          <p>스파링, 피드백, 웃긴 순간을 Shorts/Reels 후보로 남겨 팀 활동이 계속 보이게 한다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="relay-section relay-loop" id="loop" aria-labelledby="loop-title">
+      <div class="section-heading">
+        <p class="kicker">Operating Loop</p>
+        <h2 id="loop-title">공지부터 숏츠까지</h2>
+      </div>
+      <ol class="relay-loop-list">
+        {operatingLoop.map(([step, title, body]) => (
+          <li>
+            <span>{step}</span>
+            <strong>{title}</strong>
+            <p>{body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="relay-section relay-showcase" id="examples" aria-labelledby="examples-title">
+      <div class="section-heading">
+        <p class="kicker">Actual Media</p>
+        <h2 id="examples-title">말 대신 보이는 예시</h2>
+      </div>
+      <div class="relay-showcase-grid">
+        {examples.map((example) => (
+          <a class="relay-showcase-card" href={example.href}>
+            <img src={example.image} alt={`${example.title} 미리보기`} loading="lazy" />
+            <span>{example.label}</span>
+            <strong>{example.title}</strong>
+            <p>{example.body}</p>
+            <em>{example.cta}</em>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="relay-section relay-principles" aria-labelledby="principles-title">
+      <div class="relay-principle-copy">
+        <p class="kicker">Training Direction</p>
+        <h2 id="principles-title">짧게 치고 바로 돌아온다</h2>
+        <p>
+          Relay Vanguard의 현재 훈련 방향은 큰 동작보다 모바일 화면에서도 읽히는 짧은 액션,
+          안전한 스파링, 방송에서 설명 가능한 피드백에 맞춰져 있다.
+        </p>
+      </div>
+      <div class="relay-character-panel">
+        <img src={characterImage} alt="Relay Vanguard 캐릭터 비주얼" loading="lazy" />
+      </div>
+      <ul class="relay-principle-list">
+        {principles.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="relay-section relay-channels" id="channels" aria-labelledby="channels-title">
+      <div class="section-heading">
+        <p class="kicker">Channels</p>
+        <h2 id="channels-title">방송팀 채널</h2>
+      </div>
+      <div class="relay-channel-grid">
+        {relayYoutube ? (
+          <a href={relayYoutube.href} rel="me">
+            <strong>{relayYoutube.label}</strong>
+            <span>{relayYoutube.note}</span>
+          </a>
+        ) : null}
+        {relayX ? (
+          <a href={relayX.href} rel="me">
+            <strong>{relayX.label}</strong>
+            <span>{relayX.note}</span>
+          </a>
+        ) : null}
+        {instagram ? (
+          <a href={instagram.href} rel="me">
+            <strong>{instagram.label}</strong>
+            <span>{instagram.note}</span>
+          </a>
+        ) : null}
+        <a href={`${base}research/`}>
+          <strong>VRC Boxing Research</strong>
+          <span>공식 생태계와 팀 운영 방향 정리</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

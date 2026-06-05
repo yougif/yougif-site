@@ -810,6 +810,243 @@ h2 {
   list-style-position: inside;
 }
 
+.relay-home-page {
+  overflow: hidden;
+}
+
+.relay-home-page :where(div, section, article, figure, p, h1, h2, h3, ul, ol, li, a) {
+  min-width: 0;
+}
+
+.relay-home-hero,
+.relay-section {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.relay-home-hero {
+  min-height: min(calc(88svh - 4rem), 48rem);
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  padding: clamp(2.5rem, 7vw, 4.5rem) 0 2rem;
+}
+
+.relay-hero-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.relay-hero-copy h1 {
+  max-width: 11ch;
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  line-height: 0.95;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.relay-hero-copy .lead {
+  max-width: 38rem;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.relay-hero-stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 91, 97, 0.18), rgba(88, 215, 247, 0.08)),
+    var(--panel);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.4);
+}
+
+.relay-hero-main {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.relay-hero-logo {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: min(11rem, 38%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(8, 10, 15, 0.78);
+  padding: 0.65rem;
+}
+
+.relay-section {
+  padding: clamp(3.25rem, 8vw, 6rem) 0;
+}
+
+.relay-identity-grid,
+.relay-loop-list,
+.relay-showcase-grid,
+.relay-channel-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.relay-identity-grid,
+.relay-showcase-grid,
+.relay-channel-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+
+.relay-identity-grid article,
+.relay-loop-list li,
+.relay-showcase-card,
+.relay-principle-list li,
+.relay-channel-grid a {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.relay-identity-grid article {
+  display: grid;
+  gap: 0.5rem;
+  min-height: 10rem;
+  align-content: end;
+  padding: 1rem;
+}
+
+.relay-identity-grid strong,
+.relay-loop-list strong,
+.relay-showcase-card strong,
+.relay-channel-grid strong {
+  color: var(--text);
+  font-size: 1.15rem;
+}
+
+.relay-identity-grid p,
+.relay-loop-list p,
+.relay-showcase-card p,
+.relay-principle-copy p,
+.relay-channel-grid span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.relay-loop-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.relay-loop-list li {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+}
+
+.relay-loop-list span {
+  color: var(--red);
+  font-weight: 950;
+}
+
+.relay-showcase-card {
+  display: grid;
+  gap: 0.65rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.relay-showcase-card img {
+  width: calc(100% + 2rem);
+  max-width: none;
+  margin: -1rem -1rem 0;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--panel-2);
+}
+
+.relay-showcase-card span {
+  color: var(--lime);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.relay-showcase-card em {
+  width: fit-content;
+  border: 1px solid rgba(88, 215, 247, 0.36);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  color: var(--cyan);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.relay-showcase-card:hover,
+.relay-showcase-card:focus-visible,
+.relay-channel-grid a:hover,
+.relay-channel-grid a:focus-visible {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+.relay-principles {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+.relay-principle-copy {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.relay-principle-copy h2 {
+  max-width: 12ch;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.relay-character-panel {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(88, 215, 247, 0.12), rgba(255, 91, 97, 0.1)),
+    var(--panel);
+}
+
+.relay-character-panel img {
+  width: 100%;
+  max-height: 30rem;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.relay-principle-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.relay-principle-list li {
+  padding: 0.9rem 1rem;
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.relay-channel-grid a {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem;
+}
+
 .scoreboard,
 .evidence-grid,
 .media-showcase,
@@ -1091,6 +1328,18 @@ h2 {
   .project-detail-hero {
     grid-template-columns: minmax(0, 0.85fr) minmax(22rem, 1.15fr);
   }
+
+  .relay-home-hero {
+    grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1.1fr);
+  }
+
+  .relay-loop-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .relay-principles {
+    grid-template-columns: minmax(0, 0.8fr) minmax(18rem, 0.75fr) minmax(0, 0.85fr);
+  }
 }
 
 @media (max-width: 520px) {
@@ -1156,5 +1405,78 @@ h2 {
     line-height: 1.05;
     word-break: break-all;
     overflow-wrap: anywhere;
+  }
+
+  .relay-home-hero,
+  .relay-section {
+    width: min(320px, calc(100vw - 2rem));
+    margin-left: 1rem;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .relay-home-hero {
+    min-height: auto;
+    gap: 1.25rem;
+    padding-top: 2.4rem;
+  }
+
+  .relay-home-page .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .relay-home-page .hero-actions .button {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 0.55rem;
+    white-space: nowrap;
+  }
+
+  .relay-home-page .hero-actions .button:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .relay-hero-copy h1 {
+    max-width: 8ch;
+    font-size: clamp(2.25rem, 10.5vw, 2.75rem);
+    line-height: 1.02;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .relay-hero-copy .lead,
+  .relay-home-page p,
+  .relay-home-page li,
+  .relay-channel-grid span {
+    font-size: 0.98rem;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .relay-home-page h2 {
+    max-width: 9ch;
+    font-size: clamp(1.65rem, 7.8vw, 2rem);
+    line-height: 1.05;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .relay-hero-logo {
+    left: 0.75rem;
+    bottom: 0.75rem;
+    width: min(8rem, 42%);
+    padding: 0.45rem;
+  }
+
+  .relay-identity-grid article,
+  .relay-loop-list li,
+  .relay-showcase-card,
+  .relay-principle-list li,
+  .relay-channel-grid a {
+    width: 100%;
+    max-width: 100%;
   }
 }
