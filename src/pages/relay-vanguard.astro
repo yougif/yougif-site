@@ -12,8 +12,11 @@ const relayX = channelByLabel.get("Relay Vanguard X");
 const instagram = channelByLabel.get("Instagram");
 const vrchatGroupUrl = "https://vrchat.com/home/group/grp_1cf18497-a232-4847-ba68-eea5b168a56e";
 const vrchatMembersUrl = `${vrchatGroupUrl}/members`;
+const yougifVrchatUrl = "https://vrchat.com/home/user/usr_7d6ccbbb-95d3-4416-8e1d-8c5c1f8374d6";
+const yougifChzzkUrl = "https://chzzk.naver.com/9b3c8f69447bed843261721afb6a96f4";
 const vrchatShortUrl = "https://vrc.group/RLYVG.8352";
 const vrchatBannerImage = "https://api.vrchat.cloud/api/1/file/file_a87b183b-a277-45ce-b304-bde98ca3d787/1/file";
+const yougifChzzkImage = "https://nng-phinf.pstatic.net/MjAyNTEwMTRfMTEy/MDAxNzYwMzY3Njk5MDA2.ys_l7qsBE5fr1OunHMihrkC6dlJFl5WlNj9p47WmRNgg.T1hqJ0nM9YOxAu81KJsjQNGvQHjsIdOyVBbR5xjLBGYg.PNG/image.png";
 
 const heroImage = `${base}assets/media/relay-thumbnail.png`;
 const logoImage = `${base}assets/media/relay-vanguard-logo.png`;
@@ -39,12 +42,17 @@ const promotionLinks = [
 const teamMembers = [
   {
     role: "팀장",
-    name: "유기프",
+    name: "유 기 프",
     body:
-      "Relay Vanguard 팀장. 팀 운영, 방송 세팅, 녹화본 정리, Shorts/Reels 검수 흐름을 맡고, 훈련 장면이 방송과 숏폼으로 이어지게 만든다.",
-    href: "https://x.com/vrc_yougif",
-    cta: "X",
-    avatar: logoImage,
+      "VRChat 표시 이름은 유 기 프. Relay Vanguard 팀장으로 팀 운영, 방송 세팅, 녹화본 정리, Shorts/Reels 검수 흐름을 맡고, 훈련 장면이 방송과 숏폼으로 이어지게 만든다.",
+    href: yougifVrchatUrl,
+    cta: "VRChat",
+    avatar: yougifChzzkImage,
+    streamHref: yougifChzzkUrl,
+    streamCta: "치지직",
+    extraLinks: [
+      ["X", "https://x.com/vrc_yougif"]
+    ],
     badges: ["Leader", "Operation", "Coach"]
   },
   {
@@ -86,27 +94,30 @@ const teamMembers = [
   },
   {
     role: "팀원",
-    name: "vrcBinMaen",
+    name: "빈냥",
     body:
-      "Relay Vanguard 훈련과 팀 활동에 함께하는 멤버. VRC Boxing 방송팀의 활동 기록과 연결되는 개인 X 계정을 함께 안내한다.",
+      "빈냥님. Relay Vanguard 훈련과 팀 활동에 함께하는 멤버. VRC Boxing 방송팀의 활동 기록과 연결되는 개인 X 계정을 함께 안내한다.",
     href: "https://x.com/vrcBinMaen",
-    cta: "vrcBinMaen X"
+    cta: "X",
+    avatar: avatarFor("vrcBinMaen")
   },
   {
     role: "팀원",
-    name: "aosorasiho",
+    name: "시로",
     body:
-      "Relay Vanguard 팀 활동에 함께하는 멤버. 훈련 공지와 팀 활동 흐름은 Relay Vanguard X와 개인 X 링크로 이어서 확인할 수 있다.",
+      "시로님. Relay Vanguard 팀 활동에 함께하는 멤버. 훈련 공지와 팀 활동 흐름은 Relay Vanguard X와 개인 X 링크로 이어서 확인할 수 있다.",
     href: "https://x.com/aosorasiho",
-    cta: "aosorasiho X"
+    cta: "X",
+    avatar: avatarFor("aosorasiho")
   },
   {
     role: "팀원",
-    name: "Rebinoa",
+    name: "레비노아",
     body:
-      "Relay Vanguard 팀 활동과 VRC Boxing 흐름에 함께하는 멤버. X 게시글을 통해 실제 활동 기록도 함께 연결한다.",
+      "레비노아님. Relay Vanguard 팀 활동과 VRC Boxing 흐름에 함께하는 멤버. X 게시글을 통해 실제 활동 기록도 함께 연결한다.",
     href: "https://x.com/Rebinoa_Phesyu",
-    cta: "Rebinoa X"
+    cta: "X",
+    avatar: avatarFor("Rebinoa_Phesyu")
   },
   {
     role: "팀원",
@@ -227,7 +238,7 @@ const examples = [
 ];
 
 const contacts = [
-  ["VRChat", "yougif 계정으로 문의", "VRChat에서 유기프에게 직접 문의"],
+  ["VRChat", "유 기 프 계정으로 문의", yougifVrchatUrl],
   ["Discord", "yougif", "디스코드에서는 yougif 로 문의"],
   ["VRChat Group", "Relay Vanguard 그룹", vrchatGroupUrl],
   ["Group Code", "RLYVG.8352", vrchatShortUrl],
