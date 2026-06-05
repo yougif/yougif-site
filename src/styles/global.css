@@ -969,6 +969,26 @@ h2 {
   text-transform: uppercase;
 }
 
+.relay-member-badges,
+.relay-member-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.relay-member-badges em {
+  width: fit-content;
+  border: 1px solid rgba(183, 242, 109, 0.32);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+  color: var(--lime);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .relay-member-grid a,
 .relay-contact-grid a {
   width: fit-content;

@@ -51,9 +51,12 @@ const teamMembers = [
     role: "팀원",
     name: "Katinor Rayner",
     body:
-      "VRC Boxing 훈련과 팀 활동에 함께 참여하는 Relay Vanguard 멤버. 팀 공지와 활동 기록은 X를 통해 이어서 확인할 수 있다.",
+      "카티노르님. Relay Vanguard 훈련과 팀 활동에 함께 참여하는 스트리머이며, 방송 링크와 활동 기록은 X 프로필에서 이어서 확인할 수 있다.",
     href: "https://x.com/KatinorRayner",
-    cta: "Katinor X"
+    cta: "X",
+    streamHref: "https://x.com/KatinorRayner",
+    streamCta: "방송 링크",
+    badges: ["Streamer"]
   },
   {
     role: "팀원",
@@ -83,17 +86,23 @@ const teamMembers = [
     role: "팀원",
     name: "도라",
     body:
-      "Relay Vanguard 팀 활동에 함께하는 멤버. VRC Boxing 훈련과 팀 활동 기록은 X 계정으로 이어서 확인할 수 있다.",
+      "이도라님. 마작방송, 테이블탑 방송 등 여러 방송을 하는 스트리머이며, Relay Vanguard 팀 활동도 함께한다.",
     href: "https://x.com/IngMajag",
-    cta: "도라 X"
+    cta: "X",
+    streamHref: "https://x.com/IngMajag",
+    streamCta: "방송 링크",
+    badges: ["Streamer"]
   },
   {
     role: "팀원",
     name: "Rapiya",
     body:
-      "Relay Vanguard 팀 활동에 함께하는 멤버. 훈련 공지와 활동 흐름은 Relay Vanguard 채널과 개인 X 링크로 연결한다.",
+      "라피야님. VRC와 Boxing 활동을 중심으로 하는 스트리머이며, Relay Vanguard 훈련과 팀 활동 흐름을 함께 만든다.",
     href: "https://x.com/Rape_ya",
-    cta: "Rapiya X"
+    cta: "X",
+    streamHref: "https://x.com/Rape_ya",
+    streamCta: "방송 링크",
+    badges: ["Streamer"]
   }
 ];
 
@@ -219,8 +228,16 @@ const contacts = [
           <article>
             <span>{member.role}</span>
             <strong>{member.name}</strong>
+            {member.badges?.length ? (
+              <div class="relay-member-badges">
+                {member.badges.map((badge) => <em>{badge}</em>)}
+              </div>
+            ) : null}
             <p>{member.body}</p>
-            <a href={member.href}>{member.cta}</a>
+            <div class="relay-member-actions">
+              <a href={member.href}>{member.cta}</a>
+              {member.streamHref ? <a href={member.streamHref}>{member.streamCta}</a> : null}
+            </div>
           </article>
         ))}
       </div>
