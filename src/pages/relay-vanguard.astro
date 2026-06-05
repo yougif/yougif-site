@@ -23,6 +23,7 @@ const logoImage = `${base}assets/media/relay-vanguard-logo.png`;
 const posterImage = `${base}assets/media/relay-final-a4.jpg`;
 const shortsImage = `${base}assets/media/relay-example-shorts.png`;
 const characterImage = `${base}assets/media/relay-vanguard-character.png`;
+const yeonmuziVrchatImage = "https://api.vrchat.cloud/api/1/image/file_28a1b990-ab11-43a2-a911-3847fa05b710/1/256";
 const avatarFor = (handle: string, provider = "x") => `https://unavatar.io/${provider}/${handle}`;
 
 const promotionLinks = [
@@ -62,7 +63,7 @@ const teamMembers = [
       "Relay Vanguard 부팀장. 훈련 포스터 방향과 팀 비주얼의 중심 인물이며, 초보자도 들어오기 쉬운 연습 분위기와 코칭 흐름을 함께 잡는다.",
     href: relayX?.href ?? "https://x.com/relay_vanguard",
     cta: "팀 X",
-    avatar: characterImage,
+    avatar: yeonmuziVrchatImage,
     badges: ["Vice Leader", "Operation", "Coach"]
   },
   {
