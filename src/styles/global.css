@@ -143,7 +143,8 @@ h2 {
 }
 
 .hero-actions,
-.link-row {
+.link-row,
+.inline-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -374,6 +375,10 @@ h2 {
   gap: 1.5rem;
 }
 
+.inline-actions {
+  margin-top: 1rem;
+}
+
 .pipeline {
   display: grid;
   gap: 0.6rem;
@@ -474,6 +479,161 @@ h2 {
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 700;
+}
+
+.workflow-page {
+  overflow: hidden;
+}
+
+.workflow-hero {
+  min-height: min(72svh, 42rem);
+}
+
+.workflow-hero h1 {
+  max-width: 38rem;
+  font-size: clamp(2.45rem, 7vw, 4.7rem);
+  line-height: 0.98;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.workflow-page .lead,
+.workflow-note p,
+.private-panel p,
+.workflow-loop p {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 520px) {
+  .workflow-hero h1 {
+    max-width: 20rem;
+    font-size: clamp(2rem, 10.5vw, 2.55rem);
+    line-height: 1.02;
+  }
+
+  .workflow-page .lead {
+    max-width: 20rem;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+.workflow-note-grid,
+.workflow-loop {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.workflow-note-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.workflow-note,
+.workflow-loop li,
+.private-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.workflow-note {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+  padding: 1rem;
+}
+
+.note-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.note-meta strong,
+.status-pill {
+  color: var(--lime);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workflow-note h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  line-height: 1.05;
+}
+
+.workflow-note p,
+.workflow-note li,
+.workflow-loop p,
+.private-panel p,
+.private-note {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.workflow-note ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.status-pill {
+  width: fit-content;
+  border: 1px solid rgba(183, 242, 109, 0.34);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  background: rgba(183, 242, 109, 0.08);
+}
+
+.workflow-loop {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-loop li {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+}
+
+.workflow-loop span {
+  color: var(--red);
+  font-weight: 950;
+}
+
+.workflow-loop strong,
+.private-panel strong {
+  color: var(--text);
+  font-size: 1.15rem;
+}
+
+.private-panel {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.private-panel > div {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.private-note {
+  margin-top: 0.85rem;
 }
 
 .scoreboard,
@@ -744,6 +904,14 @@ h2 {
 
   .mode-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow-loop {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .private-panel {
+    grid-template-columns: 1fr auto;
   }
 }
 

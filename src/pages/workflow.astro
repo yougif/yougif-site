@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { workflowNotes } from "../data/yougif";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const loop = [
+  ["01", "Record", "OBS와 플랫폼 VOD에서 원본을 남긴다."],
+  ["02", "Score", "audio activity와 video motion으로 후보 구간을 고른다."],
+  ["03", "Render", "1080x1920 세로 MP4와 PNG overlay 자막을 만든다."],
+  ["04", "Review", "private 저장 후 제목, 설명, 재생목록, 움직임을 검수한다."],
+  ["05", "Publish", "공개 가능한 결과만 Shorts/Reels와 링크 허브에 연결한다."]
+];
+---
+<BaseLayout title="Yougif Workflow | 운영 작업기" description="Yougif 방송, Relay Vanguard, Shorts 자동화 운영 작업기.">
+  <header class="site-header">
+    <a class="brand" href={base}>Yougif</a>
+    <nav aria-label="Yougif Workflow 메뉴">
+      <a href={base}>홈</a>
+      <a href="#notes">작업기</a>
+      <a href="#loop">루프</a>
+      <a href="#private">Private</a>
+      <a href={`${base}#links`}>링크</a>
+    </nav>
+  </header>
+
+  <main class="workflow-page">
+    <section class="section research-hero workflow-hero" aria-labelledby="workflow-page-title">
+      <div>
+        <p class="kicker">Yougif Workflow</p>
+        <h1 id="workflow-page-title">방송 운영을<br />기록으로 남긴다</h1>
+        <p class="lead">
+          유기프 방송, Relay Vanguard 훈련, Shorts 자동화 실험을 작업기 형태로 남긴다.
+          공개 가능한 요약은 여기서 보고, 민감한 운영 메모는 Google 로그인 보호가 걸린 private 경로에 둔다.
+        </p>
+      </div>
+    </section>
+
+    <section class="section research-panel" id="notes" aria-labelledby="notes-title">
+      <div class="section-heading">
+        <p class="kicker">작업기</p>
+        <h2 id="notes-title">최근 운영 기록</h2>
+      </div>
+      <div class="workflow-note-grid">
+        {workflowNotes.map((note) => (
+          <article class="workflow-note">
+            <div class="note-meta">
+              <span>{note.date}</span>
+              <strong>{note.tag}</strong>
+            </div>
+            <h3>{note.title}</h3>
+            <p>{note.summary}</p>
+            <ul>
+              {note.points.map((point) => <li>{point}</li>)}
+            </ul>
+            <span class="status-pill">{note.status}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section research-panel" id="loop" aria-labelledby="loop-title">
+      <div class="section-heading">
+        <p class="kicker">운영 루프</p>
+        <h2 id="loop-title">영상이 작업기가 되는 순서</h2>
+      </div>
+      <ol class="workflow-loop">
+        {loop.map(([step, title, body]) => (
+          <li>
+            <span>{step}</span>
+            <strong>{title}</strong>
+            <p>{body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="section research-panel private-workflow" id="private" aria-labelledby="private-title">
+      <div class="section-heading">
+        <p class="kicker">Private Notes</p>
+        <h2 id="private-title">로그인 뒤 보는 운영 기록</h2>
+      </div>
+      <div class="private-panel">
+        <div>
+          <strong>Cloudflare Access로 보호할 경로</strong>
+          <p>
+            실제 private 작업기는 정적 사이트에 그대로 넣지 않고,
+            Cloudflare Access에서 Google 로그인을 요구하는 경로로 분리한다.
+          </p>
+        </div>
+        <a class="button primary" href={`${base}workflow-private/`}>Private Workflow 열기</a>
+      </div>
+      <p class="private-note">
+        이 버튼은 보호 경로로 이동한다. Cloudflare Access 정책이 설정되기 전에는 이 경로를 공개 콘텐츠 저장소로 쓰지 않는다.
+      </p>
+    </section>
+  </main>
+</BaseLayout>

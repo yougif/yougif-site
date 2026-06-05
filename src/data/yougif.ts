@@ -63,6 +63,15 @@ export const projects = [
     summary: "녹화본에서 Shorts/Reels 후보를 뽑아 세로형 영상으로 정리.",
     detail:
       "PUBG 반응, VRC Boxing 훈련, 방송 하이라이트를 로컬에서 선별하고 세로형 클립으로 렌더링하는 자동화 흐름이다."
+  },
+  {
+    id: "workflow",
+    title: "Yougif Workflow",
+    tag: "운영 작업기",
+    image: asset("assets/media/relay-vanguard-logo.png"),
+    summary: "방송, 녹화, 숏츠, 업로드 실험을 기록하는 Yougif 운영 로그.",
+    detail:
+      "Yougif Workflow는 방송과 Relay Vanguard 운영을 어떻게 자동화하고 검수했는지 남기는 작업기다. 공개 가능한 요약은 사이트에 올리고, 민감한 운영 기록은 Cloudflare Access로 보호한다."
   }
 ];
 
@@ -157,4 +166,46 @@ export const workflow = [
   ["02", "정리", "OBS 녹화본과 썸네일, 대기화면, 팀 이미지를 소스 단위로 정리한다."],
   ["03", "클립", "PUBG 반응과 VRC Boxing 훈련 장면을 Shorts/Reels 후보로 자른다."],
   ["04", "공개", "플랫폼별 링크와 팀/개인 채널을 분리해 공개한다."]
+];
+
+export const workflowNotes = [
+  {
+    title: "Relay Vanguard Shorts Pipeline",
+    date: "2026-06-01",
+    tag: "Shorts Automation",
+    summary:
+      "긴 VRC Boxing 훈련 녹화본에서 후보 장면을 고르고, 1080x1920 세로 MP4로 렌더링한 뒤, YouTube Studio에서 private Shorts 업로드까지 검증했다.",
+    points: [
+      "audio activity와 video motion을 같이 보면서 실제 움직임이 있는 훈련 구간을 우선했다.",
+      "Shotcut FFmpeg의 drawtext 미지원 가능성을 고려해 PNG overlay 자막을 유지했다.",
+      "YouTube 업로드는 private-first로 진행하고 제목, 설명, 재생목록, 아동용 아님, 검사 통과를 확인했다."
+    ],
+    status: "private uploaded sample verified"
+  },
+  {
+    title: "Mobile Caption Layout",
+    date: "2026-06-01",
+    tag: "Render Design",
+    summary:
+      "숏츠 화면에서 작은 글자가 읽히지 않는 문제를 줄이기 위해 자막을 짧은 문장, 굵은 대비, 고정 위치 PNG overlay로 정리했다.",
+    points: [
+      "문장 수를 줄이고 hook 중심으로 화면 상단/하단에 분리했다.",
+      "세로 crop과 자막 위치가 얼굴이나 주요 동작을 가리지 않도록 review queue에서 확인한다.",
+      "향후 Whisper 기반 자동 자막은 전체 대사를 넣기보다 핵심 hook 위주로 줄인다."
+    ],
+    status: "layout direction set"
+  },
+  {
+    title: "Private Review Before Publish",
+    date: "2026-06-01",
+    tag: "Publishing",
+    summary:
+      "자동 생성 결과를 바로 public으로 올리지 않고 private 저장 후 확인하는 운영 원칙을 세웠다.",
+    points: [
+      "공식 OAuth 또는 사용자가 보는 Studio UI만 사용한다.",
+      "브라우저 인증 정보 기반 우회 업로드는 쓰지 않는다.",
+      "공개 전에는 playlist, 설명, title, visibility, 영상 움직임을 한 번 더 확인한다."
+    ],
+    status: "policy adopted"
+  }
 ];
