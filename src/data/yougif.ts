@@ -58,7 +58,7 @@ export const projects = [
       ["Instagram Reels", "짧은 훈련 장면, 포스터, 팀 분위기를 빠르게 보여주는 홍보 채널."],
       ["X", "훈련 공지, 진행 상황, VRChat/VRC Boxing 관련 짧은 업데이트."]
     ],
-    channelLabels: ["Relay Vanguard YouTube", "Instagram", "X"],
+    channelLabels: ["Relay Vanguard YouTube", "Instagram", "Relay Vanguard X"],
     nextSteps: ["초보자도 따라오기 쉬운 훈련 공지 템플릿 정리", "훈련 하이라이트 자동 선별 기준 개선", "Relay Vanguard 전용 Shorts 제목/설명 규칙 고정"]
   },
   {
@@ -193,6 +193,11 @@ export const channels = [
     label: "X",
     href: "https://x.com/vrc_yougif",
     note: "VRChat과 방송 소식"
+  },
+  {
+    label: "Relay Vanguard X",
+    href: "https://x.com/relay_vanguard",
+    note: "Relay Vanguard 팀 공지와 훈련 소식"
   },
   {
     label: "CHZZK",
