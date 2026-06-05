@@ -79,16 +79,23 @@ for (const match of localAssetText.matchAll(/\/yougif-site\/([A-Za-z0-9_./% -]+)
   }
 }
 
-if (!page.includes("project-card") || !page.includes("project-modal")) {
-  errors.push("Project modal markup is missing");
+if (!page.includes("project-card") || !page.includes("project.href") || !page.includes("자세히 보기")) {
+  errors.push("Project detail link markup is missing");
 }
 
 if (!page.includes("gallery-grid") || !page.includes("lightbox")) {
   errors.push("Gallery lightbox markup is missing");
 }
 
-if (!clientScript.includes("document.querySelectorAll(\".project-card\")") || !clientScript.includes("openModal(projectModal)")) {
-  errors.push("Project modal click handler is missing");
+const projectDetailRoutes = [
+  join(root, "dist", "projects", "relay-vanguard", "index.html"),
+  join(root, "dist", "projects", "broadcast", "index.html"),
+  join(root, "dist", "projects", "shorts-automation", "index.html")
+];
+for (const route of projectDetailRoutes) {
+  if (!existsSync(route)) {
+    errors.push(`Missing project detail page: ${route}`);
+  }
 }
 
 if (!clientScript.includes("document.querySelectorAll(\".gallery-item\")") || !clientScript.includes("openModal(lightbox)")) {

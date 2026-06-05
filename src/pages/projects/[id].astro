@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { channels, projects } from "../../data/yougif";
+
+export function getStaticPaths() {
+  return projects
+    .filter((project) => project.href.includes("/projects/"))
+    .map((project) => ({
+      params: { id: project.href.split("/projects/")[1].replaceAll("/", "") },
+      props: { project }
+    }));
+}
+
+const { project } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const relatedChannels = channels.filter((channel) => project.channelLabels?.includes(channel.label));
+---
+<BaseLayout title={`${project.title} | Yougif 프로젝트`} description={project.summary}>
+  <header class="site-header">
+    <a class="brand" href={base}>Yougif</a>
+    <nav aria-label="프로젝트 상세 메뉴">
+      <a href={`${base}#projects`}>프로젝트</a>
+      <a href={`${base}research/`}>Research</a>
+      <a href={`${base}workflow/`}>Workflow</a>
+      <a href={`${base}#links`}>링크</a>
+    </nav>
+  </header>
+
+  <main class="project-detail-page">
+    <section class="section project-detail-hero" aria-labelledby="project-title">
+      <div>
+        <p class="kicker">{project.tag}</p>
+        <h1 id="project-title">{project.title}</h1>
+        <p class="lead">{project.intro}</p>
+      </div>
+      <figure class="project-detail-cover">
+        <img src={project.image} alt={`${project.title} 대표 이미지`} />
+      </figure>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="why-title">
+      <div class="section-heading">
+        <p class="kicker">활동 설명</p>
+        <h2 id="why-title">무엇을 하는 프로젝트인가</h2>
+      </div>
+      <div class="origin-panel">
+        <p>{project.detail}</p>
+        <ul>
+          {project.highlights.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="platform-title">
+      <div class="section-heading">
+        <p class="kicker">플랫폼 역할</p>
+        <h2 id="platform-title">어디에 어떻게 연결되나</h2>
+      </div>
+      <div class="project-platform-grid">
+        {project.platforms.map(([name, body]) => (
+          <article>
+            <strong>{name}</strong>
+            <p>{body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="channel-title">
+      <div class="section-heading">
+        <p class="kicker">바로가기</p>
+        <h2 id="channel-title">관련 채널</h2>
+      </div>
+      <div class="link-row project-link-row">
+        {relatedChannels.map((channel) => (
+          <a href={channel.href} rel="me">
+            <strong>{channel.label}</strong>
+            <span>{channel.note}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="next-title">
+      <div class="section-heading">
+        <p class="kicker">다음 작업</p>
+        <h2 id="next-title">이 프로젝트가 더 설명해야 할 것</h2>
+      </div>
+      <ol class="project-next-list">
+        {project.nextSteps.map((item) => <li>{item}</li>)}
+      </ol>
+    </section>
+  </main>
+</BaseLayout>

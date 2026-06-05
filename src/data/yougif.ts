@@ -44,7 +44,22 @@ export const projects = [
     image: asset("assets/media/relay-thumbnail.png"),
     summary: "방송 친화형 VRC Boxing 팀 운영, 정기 연습, 팀 브랜딩.",
     detail:
-      "Relay Vanguard는 VRChat 복싱을 방송 가능한 오픈 스튜디오처럼 운영하는 프로젝트다. 팀 공지, 연습회, 하이라이트, YouTube 활동을 한 흐름으로 관리한다."
+      "Relay Vanguard는 VRChat 복싱을 방송 가능한 오픈 스튜디오처럼 운영하는 프로젝트다. 팀 공지, 연습회, 하이라이트, YouTube 활동을 한 흐름으로 관리한다.",
+    href: `${base}projects/relay-vanguard/`,
+    intro:
+      "Relay Vanguard는 VRC Boxing을 한국어 방송과 숏폼에 맞게 풀어내는 팀 프로젝트다. 단순 친목 모임이 아니라 훈련 공지, 팀 비주얼, 경기/스파링 기록, Shorts 하이라이트까지 연결되는 운영 단위로 만든다.",
+    highlights: [
+      "VRChat VRC Boxing 월드와 공식 생태계를 기반으로 한국어 훈련 흐름을 만든다.",
+      "Relay Vanguard 로고, 포스터, 썸네일, 장갑/복장 같은 팀 비주얼을 일관되게 관리한다.",
+      "연습 장면은 방송 소재, YouTube Shorts, Instagram Reels, 팀 홍보 자료로 재사용한다."
+    ],
+    platforms: [
+      ["Relay Vanguard YouTube", "팀 훈련 영상과 VRC Boxing 하이라이트를 올리는 팀 채널."],
+      ["Instagram Reels", "짧은 훈련 장면, 포스터, 팀 분위기를 빠르게 보여주는 홍보 채널."],
+      ["X", "훈련 공지, 진행 상황, VRChat/VRC Boxing 관련 짧은 업데이트."]
+    ],
+    channelLabels: ["Relay Vanguard YouTube", "Instagram", "X"],
+    nextSteps: ["초보자도 따라오기 쉬운 훈련 공지 템플릿 정리", "훈련 하이라이트 자동 선별 기준 개선", "Relay Vanguard 전용 Shorts 제목/설명 규칙 고정"]
   },
   {
     id: "broadcast",
@@ -53,7 +68,22 @@ export const projects = [
     image: asset("assets/media/youtube-waiting.png"),
     summary: "유기프 아바타와 방송 대기화면을 중심으로 한 라이브 패키지.",
     detail:
-      "불꽃 스웨터, 뿔, 붉은 머리 아바타를 중심으로 YouTube, 치지직, SOOP, Twitch에 맞는 대기화면과 썸네일 톤을 만든다."
+      "불꽃 스웨터, 뿔, 붉은 머리 아바타를 중심으로 YouTube, 치지직, SOOP, Twitch에 맞는 대기화면과 썸네일 톤을 만든다.",
+    href: `${base}projects/broadcast/`,
+    intro:
+      "유기프 방송은 VRChat 아바타, PUBG 플레이, VRC Boxing 훈련을 한 캐릭터 채널 안에서 운영하는 라이브 프로젝트다. 플랫폼별로 흩어진 방송을 하나의 허브에서 설명하고, 시청자가 어디서 무엇을 보면 되는지 분명하게 만든다.",
+    highlights: [
+      "YouTube, 치지직, SOOP, Twitch, CIME를 역할별로 분리해 운영한다.",
+      "PUBG 대기화면과 VRC Boxing 대기화면을 콘텐츠 성격에 맞게 교체한다.",
+      "아바타, 썸네일, 대기화면을 반복 노출해 유기프라는 방송 정체성을 만든다."
+    ],
+    platforms: [
+      ["YouTube", "편집 영상, Shorts, 장기적으로 검색 유입을 받을 콘텐츠의 중심."],
+      ["CHZZK", "한국 시청자와 실시간으로 만나는 라이브 채널."],
+      ["SOOP / Twitch / CIME", "라이브 백업, VOD, 외부 유입을 보완하는 채널 묶음."]
+    ],
+    channelLabels: ["Yougif YouTube", "CHZZK", "SOOP", "Twitch", "CIME"],
+    nextSteps: ["플랫폼별 방송 설명 문구 통일", "PUBG와 VRC Boxing 대기화면 상태 전환 체크리스트 정리", "VOD에서 Shorts 후보로 넘어가는 경로 자동화"]
   },
   {
     id: "clips",
@@ -62,7 +92,22 @@ export const projects = [
     image: asset("assets/media/yougif-avatar.png"),
     summary: "녹화본에서 Shorts/Reels 후보를 뽑아 세로형 영상으로 정리.",
     detail:
-      "PUBG 반응, VRC Boxing 훈련, 방송 하이라이트를 로컬에서 선별하고 세로형 클립으로 렌더링하는 자동화 흐름이다."
+      "PUBG 반응, VRC Boxing 훈련, 방송 하이라이트를 로컬에서 선별하고 세로형 클립으로 렌더링하는 자동화 흐름이다.",
+    href: `${base}projects/shorts-automation/`,
+    intro:
+      "숏폼 자동화는 긴 로컬 녹화본에서 쓸 만한 장면을 찾고, 모바일에서 읽히는 1080x1920 세로 MP4로 렌더링하는 운영 파이프라인이다. 단순 자동 업로드보다 후보 선별, 자막 가독성, private 검수 순서를 우선한다.",
+    highlights: [
+      "채널별 전략을 PUBG, Relay Vanguard, VRNews로 나누어 후보 장면 기준을 다르게 잡는다.",
+      "Shotcut FFmpeg의 drawtext 제약을 고려해 PNG overlay 자막 방식을 유지한다.",
+      "모바일 화면에서 읽히는 짧은 문장, 굵은 대비, 고정 위치 자막 레이아웃을 우선한다."
+    ],
+    platforms: [
+      ["YouTube Shorts", "private 검수 후 공개하는 주력 숏폼 게시 위치."],
+      ["Instagram Reels", "Relay Vanguard 훈련 장면과 비주얼 홍보를 빠르게 노출하는 채널."],
+      ["GitHub", "자동화 코드, 운영 메모, 개선 과정을 공개 가능한 범위에서 기록하는 저장소."]
+    ],
+    channelLabels: ["Yougif YouTube", "Relay Vanguard YouTube", "Instagram", "GitHub"],
+    nextSteps: ["audio activity와 video motion 결합 점수 개선", "Whisper 기반 핵심 자막 생성 추가", "렌더 결과 review queue와 업로드 메타데이터 자동화"]
   },
   {
     id: "workflow",
@@ -71,7 +116,22 @@ export const projects = [
     image: asset("assets/media/relay-vanguard-logo.png"),
     summary: "방송, 녹화, 숏츠, 업로드 실험을 기록하는 Yougif 운영 로그.",
     detail:
-      "Yougif Workflow는 방송과 Relay Vanguard 운영을 어떻게 자동화하고 검수했는지 남기는 작업기다. 공개 가능한 요약은 사이트에 올리고, 민감한 운영 기록은 Cloudflare Access로 보호한다."
+      "Yougif Workflow는 방송과 Relay Vanguard 운영을 어떻게 자동화하고 검수했는지 남기는 작업기다. 공개 가능한 요약은 사이트에 올리고, 민감한 운영 기록은 Cloudflare Access로 보호한다.",
+    href: `${base}workflow/`,
+    intro:
+      "Yougif Workflow는 작업 결과만 보여주는 페이지가 아니라 어떤 방식으로 방송 운영, 녹화 정리, Shorts 자동화, 업로드 검수를 개선했는지 남기는 운영 기록이다.",
+    highlights: [
+      "공개 가능한 실험 요약은 사이트에 남기고, 민감한 운영 메모는 보호된 경로로 분리한다.",
+      "작업 흐름을 Record, Score, Render, Review, Publish 단계로 정리한다.",
+      "반복 가능한 개선 내용은 블로그식 작업기로 남겨 다음 작업의 기준으로 삼는다."
+    ],
+    platforms: [
+      ["Yougif Pages", "공개 가능한 운영 요약과 프로젝트 설명을 보여주는 허브."],
+      ["Cloudflare Access", "Google 로그인 뒤 볼 private workflow 경로를 보호하는 방식."],
+      ["GitHub", "사이트와 자동화 변경 이력을 추적하는 저장소."]
+    ],
+    channelLabels: ["GitHub", "Yougif YouTube", "X"],
+    nextSteps: ["private workflow 경로 Access 정책 설정", "업로드 검수 체크리스트 추가", "주요 작업마다 공개 요약과 비공개 메모를 분리"]
   }
 ];
 

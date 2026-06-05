@@ -61,19 +61,17 @@ const siteScript = `${base}scripts/site.js`;
       </div>
       <div class="project-grid">
         {projects.map((project) => (
-          <button
+          <a
             class="project-card"
-            type="button"
-            data-modal-title={project.title}
-            data-modal-tag={project.tag}
-            data-modal-detail={project.detail}
-            data-modal-image={project.image}
+            href={project.href}
+            aria-label={`${project.title} 자세히 보기`}
           >
             <img src={project.image} alt="" loading="lazy" />
             <span>{project.tag}</span>
             <strong>{project.title}</strong>
             <p>{project.summary}</p>
-          </button>
+            <em>자세히 보기</em>
+          </a>
         ))}
       </div>
     </section>
@@ -138,16 +136,6 @@ const siteScript = `${base}scripts/site.js`;
       </div>
     </section>
   </main>
-
-  <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-panel">
-      <button class="close-button" type="button" data-close-modal aria-label="상세 닫기">×</button>
-      <img id="modal-image" alt="" />
-      <p id="modal-tag" class="kicker"></p>
-      <h2 id="modal-title"></h2>
-      <p id="modal-detail"></p>
-    </div>
-  </div>
 
   <div class="modal" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="갤러리 이미지 미리보기">
     <div class="modal-panel lightbox-panel">
