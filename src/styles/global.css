@@ -814,6 +814,10 @@ h2 {
   overflow: hidden;
 }
 
+.relay-home-page h2 {
+  font-size: clamp(2rem, 5vw, 3.85rem);
+}
+
 .relay-home-page :where(div, section, article, figure, p, h1, h2, h3, ul, ol, li, a) {
   min-width: 0;
 }
@@ -884,24 +888,34 @@ h2 {
 }
 
 .relay-identity-grid,
+.relay-member-grid,
+.relay-text-grid,
 .relay-loop-list,
 .relay-showcase-grid,
-.relay-channel-grid {
+.relay-channel-grid,
+.relay-contact-grid {
   display: grid;
   gap: 0.9rem;
 }
 
 .relay-identity-grid,
+.relay-member-grid,
+.relay-text-grid,
 .relay-showcase-grid,
-.relay-channel-grid {
+.relay-channel-grid,
+.relay-contact-grid {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
 
 .relay-identity-grid article,
+.relay-member-grid article,
+.relay-text-grid article,
 .relay-loop-list li,
 .relay-showcase-card,
 .relay-principle-list li,
-.relay-channel-grid a {
+.relay-channel-grid a,
+.relay-contact-panel,
+.relay-contact-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -915,21 +929,63 @@ h2 {
   padding: 1rem;
 }
 
+.relay-member-grid article,
+.relay-text-grid article,
+.relay-contact-grid article {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem;
+}
+
 .relay-identity-grid strong,
+.relay-member-grid strong,
 .relay-loop-list strong,
 .relay-showcase-card strong,
-.relay-channel-grid strong {
+.relay-channel-grid strong,
+.relay-contact-grid strong {
   color: var(--text);
   font-size: 1.15rem;
 }
 
 .relay-identity-grid p,
+.relay-member-grid p,
+.relay-text-grid p,
 .relay-loop-list p,
 .relay-showcase-card p,
 .relay-principle-copy p,
-.relay-channel-grid span {
+.relay-channel-grid span,
+.relay-contact-panel p,
+.relay-contact-grid p {
   color: var(--muted);
   line-height: 1.6;
+}
+
+.relay-member-grid span,
+.relay-contact-grid span {
+  color: var(--lime);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.relay-member-grid a,
+.relay-contact-grid a {
+  width: fit-content;
+  border: 1px solid rgba(88, 215, 247, 0.36);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  color: var(--cyan);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.relay-member-grid a:hover,
+.relay-member-grid a:focus-visible,
+.relay-contact-grid a:hover,
+.relay-contact-grid a:focus-visible {
+  border-color: var(--lime);
+  color: var(--text);
 }
 
 .relay-loop-list {
@@ -999,6 +1055,12 @@ h2 {
   align-items: center;
 }
 
+.relay-explain {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
 .relay-principle-copy {
   display: grid;
   gap: 0.75rem;
@@ -1045,6 +1107,12 @@ h2 {
   display: grid;
   gap: 0.3rem;
   padding: 1rem;
+}
+
+.relay-contact-panel {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
 }
 
 .scoreboard,
@@ -1340,6 +1408,10 @@ h2 {
   .relay-principles {
     grid-template-columns: minmax(0, 0.8fr) minmax(18rem, 0.75fr) minmax(0, 0.85fr);
   }
+
+  .relay-explain {
+    grid-template-columns: minmax(0, 0.85fr) minmax(18rem, 0.7fr) minmax(0, 0.85fr);
+  }
 }
 
 @media (max-width: 520px) {
@@ -1472,10 +1544,14 @@ h2 {
   }
 
   .relay-identity-grid article,
+  .relay-member-grid article,
+  .relay-text-grid article,
   .relay-loop-list li,
   .relay-showcase-card,
   .relay-principle-list li,
-  .relay-channel-grid a {
+  .relay-channel-grid a,
+  .relay-contact-panel,
+  .relay-contact-grid article {
     width: 100%;
     max-width: 100%;
   }
