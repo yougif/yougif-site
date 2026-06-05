@@ -65,20 +65,23 @@ const teamMembers = [
     href: "https://x.com/KatinorRayner",
     cta: "X",
     avatar: avatarFor("KatinorRayner"),
-    streamHref: "https://x.com/KatinorRayner",
-    streamCta: "방송 링크",
+    streamHref: "https://chzzk.naver.com/live/b84b8caa552b148c4386229fdeb76e7d",
+    streamCta: "치지직",
     badges: ["Streamer", "Operation", "Coach"]
   },
   {
     role: "운영팀",
     name: "Sandy",
     body:
-      "네트워크 담당 엔지니어이자 디스코드 담당. Relay Vanguard 운영팀으로 훈련 공지, 커뮤니티 동선, 디스코드 운영 흐름을 지원한다.",
+      "SNRD NETWORKS LIMITED를 운영하는 네트워크 담당 엔지니어. AS209710 운영과 VSTYLE X LINK 흐름을 함께 다루며, Relay Vanguard 운영팀으로 커뮤니티 동선과 디스코드 운영 흐름을 지원한다.",
     href: "https://x.com/sandy_it05",
     cta: "X",
     avatar: avatarFor("sandy_it05"),
-    streamHref: "https://x.com/sandy_it05",
-    streamCta: "디스코드 문의",
+    streamHref: "https://snrd.net",
+    streamCta: "SNRD",
+    extraLinks: [
+      ["VSTYLE X LINK", "https://vstylelink.com"]
+    ],
     badges: ["Operation", "Network", "Discord"]
   },
   {
@@ -113,8 +116,8 @@ const teamMembers = [
     href: "https://x.com/IngMajag",
     cta: "X",
     avatar: avatarFor("IngMajag?fallback=false"),
-    streamHref: "https://x.com/IngMajag",
-    streamCta: "방송 링크",
+    streamHref: "https://chzzk.naver.com/703ac32bfe9fa3200bda5a2477ef20a2",
+    streamCta: "치지직",
     badges: ["Streamer"]
   },
   {
@@ -125,8 +128,8 @@ const teamMembers = [
     href: "https://x.com/Rape_ya",
     cta: "X",
     avatar: avatarFor("Rape_ya"),
-    streamHref: "https://x.com/Rape_ya",
-    streamCta: "방송 링크",
+    streamHref: "https://chzzk.naver.com/3d3aeb6baff8270c257053c5993648fd",
+    streamCta: "치지직",
     badges: ["Streamer", "Operation", "Coach"]
   }
 ];
@@ -356,6 +359,7 @@ const contacts = [
             <div class="relay-member-actions">
               <a href={member.href}>{member.cta}</a>
               {member.streamHref ? <a href={member.streamHref}>{member.streamCta}</a> : null}
+              {member.extraLinks?.map(([label, href]) => <a href={href}>{label}</a>)}
             </div>
           </article>
         ))}
