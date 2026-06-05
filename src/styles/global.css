@@ -21,11 +21,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 18% 12%, rgba(255, 91, 97, 0.16), transparent 18rem),
     radial-gradient(circle at 78% 8%, rgba(88, 215, 247, 0.14), transparent 20rem),
@@ -652,7 +654,7 @@ h2 {
 }
 
 .project-detail-page .section {
-  width: min(1120px, calc(100vw - 3rem));
+  width: min(1120px, calc(100% - 2rem));
 }
 
 .project-detail-page :where(div, section, article, figure, p, h1, h2, h3, ul, ol, li, a) {
@@ -729,12 +731,23 @@ h2 {
   display: grid;
   gap: 0.65rem;
   align-content: start;
+  overflow: hidden;
 }
 
 .project-platform-grid strong,
 .project-example-card strong {
   color: var(--cyan);
   font-size: 1.15rem;
+}
+
+.project-example-card img {
+  width: calc(100% + 2rem);
+  max-width: none;
+  margin: -1rem -1rem 0;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--panel-2);
 }
 
 .project-platform-grid p,
@@ -761,6 +774,22 @@ h2 {
   font-size: 0.82rem;
   font-style: normal;
   font-weight: 900;
+}
+
+.project-platform-grid a {
+  width: fit-content;
+  border: 1px solid rgba(88, 215, 247, 0.36);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  color: var(--cyan);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.project-platform-grid a:hover,
+.project-platform-grid a:focus-visible {
+  border-color: var(--lime);
+  color: var(--text);
 }
 
 .project-example-card:hover,
@@ -1101,9 +1130,9 @@ h2 {
   }
 
   .project-detail-page .section {
-    width: calc(100vw - 2.5rem);
-    margin-left: 1rem;
-    margin-right: 1.5rem;
+    width: min(340px, calc(100% - 2rem));
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .project-detail-page .origin-panel,

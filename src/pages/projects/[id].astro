@@ -15,7 +15,7 @@ const { project } = Astro.props;
 const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const relatedChannels = channels.filter((channel) => project.channelLabels?.includes(channel.label));
+const channelByLabel = new Map(channels.map((channel) => [channel.label, channel]));
 ---
 <BaseLayout title={`${project.title} | Yougif 프로젝트`} description={project.summary}>
   <header class="site-header">
@@ -62,6 +62,7 @@ const relatedChannels = channels.filter((channel) => project.channelLabels?.incl
         <div class="project-example-grid">
           {project.examples.map((example) => (
             <a class="project-example-card" href={example.href}>
+              {example.image ? <img src={example.image} alt={`${example.title} 미리보기`} /> : null}
               <span>{example.label}</span>
               <strong>{example.title}</strong>
               <p>{example.body}</p>
@@ -74,31 +75,20 @@ const relatedChannels = channels.filter((channel) => project.channelLabels?.incl
 
     <section class="section research-panel" aria-labelledby="platform-title">
       <div class="section-heading">
-        <p class="kicker">플랫폼 역할</p>
-        <h2 id="platform-title"><span>어디에 어떻게</span><span>연결되나</span></h2>
+        <p class="kicker">운영 채널</p>
+        <h2 id="platform-title"><span>콘텐츠가 놓이는</span><span>위치</span></h2>
       </div>
       <div class="project-platform-grid">
-        {project.platforms.map(([name, body]) => (
-          <article>
-            <strong>{name}</strong>
-            <p>{body}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="section research-panel" aria-labelledby="channel-title">
-      <div class="section-heading">
-        <p class="kicker">바로가기</p>
-        <h2 id="channel-title">관련 채널</h2>
-      </div>
-      <div class="link-row project-link-row">
-        {relatedChannels.map((channel) => (
-          <a href={channel.href} rel="me">
-            <strong>{channel.label}</strong>
-            <span>{channel.note}</span>
-          </a>
-        ))}
+        {project.platforms.map(([name, body, channelLabel]) => {
+          const channel = channelLabel ? channelByLabel.get(channelLabel) : null;
+          return (
+            <article>
+              <strong>{name}</strong>
+              <p>{body}</p>
+              {channel ? <a href={channel.href} rel="me">채널 열기</a> : null}
+            </article>
+          );
+        })}
       </div>
     </section>
 

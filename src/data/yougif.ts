@@ -54,9 +54,9 @@ export const projects = [
       "연습 장면은 방송 소재, YouTube Shorts, Instagram Reels, 팀 홍보 자료로 재사용한다."
     ],
     platforms: [
-      ["Relay Vanguard YouTube", "팀 훈련 영상과 VRC Boxing 하이라이트를 올리는 팀 채널."],
-      ["Instagram Reels", "짧은 훈련 장면, 포스터, 팀 분위기를 빠르게 보여주는 홍보 채널."],
-      ["X", "훈련 공지, 진행 상황, VRChat/VRC Boxing 관련 짧은 업데이트."]
+      ["Relay Vanguard YouTube", "팀 훈련 영상과 VRC Boxing 하이라이트를 올리는 팀 채널.", "Relay Vanguard YouTube"],
+      ["Instagram Reels", "짧은 훈련 장면, 포스터, 팀 분위기를 빠르게 보여주는 홍보 채널.", "Instagram"],
+      ["X", "훈련 공지, 진행 상황, VRChat/VRC Boxing 관련 짧은 업데이트.", "Relay Vanguard X"]
     ],
     examples: [
       {
@@ -64,6 +64,7 @@ export const projects = [
         title: "Relay Vanguard Shorts 자동화 샘플",
         body:
           "녹화본에서 20초 안팎의 훈련 장면을 뽑고, 1080x1920 세로 영상과 모바일용 자막으로 검수한 샘플이다.",
+        image: asset("assets/media/relay-example-shorts.png"),
         href: "https://www.youtube.com/shorts/4ZHtmbQDv18",
         cta: "Shorts 보기"
       },
@@ -72,6 +73,7 @@ export const projects = [
         title: "정기 연습회 오픈 공지",
         body:
           "X에서는 긴 설명보다 모집 시간, 참여 방식, 방송 가능 여부를 짧게 고지하는 역할을 맡긴다.",
+        image: asset("assets/media/relay-final-a4.jpg"),
         href: "https://x.com/relay_vanguard/status/2037382268763992209",
         cta: "X 공지 보기"
       },
@@ -80,6 +82,7 @@ export const projects = [
         title: "첫 연습회 완료 기록",
         body:
           "훈련이 끝난 뒤에는 참가 감사, 해시태그, 짧은 회고를 남겨 다음 Shorts/Reels 소재와 연결한다.",
+        image: asset("assets/media/relay-vanguard-logo.png"),
         href: "https://x.com/relay_vanguard/status/2038649877417328864",
         cta: "X 기록 보기"
       }
