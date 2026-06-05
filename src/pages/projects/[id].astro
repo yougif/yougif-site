@@ -43,7 +43,7 @@ const relatedChannels = channels.filter((channel) => project.channelLabels?.incl
     <section class="section research-panel" aria-labelledby="why-title">
       <div class="section-heading">
         <p class="kicker">활동 설명</p>
-        <h2 id="why-title">무엇을 하는 프로젝트인가</h2>
+        <h2 id="why-title"><span>무엇을 하는</span><span>프로젝트인가</span></h2>
       </div>
       <div class="origin-panel">
         <p>{project.detail}</p>
@@ -53,10 +53,29 @@ const relatedChannels = channels.filter((channel) => project.channelLabels?.incl
       </div>
     </section>
 
+    {project.examples?.length ? (
+      <section class="section research-panel" aria-labelledby="example-title">
+        <div class="section-heading">
+          <p class="kicker">실제 예제</p>
+          <h2 id="example-title"><span>말로만 연결하지 않고</span><span>이렇게 쓴다</span></h2>
+        </div>
+        <div class="project-example-grid">
+          {project.examples.map((example) => (
+            <a class="project-example-card" href={example.href}>
+              <span>{example.label}</span>
+              <strong>{example.title}</strong>
+              <p>{example.body}</p>
+              <em>{example.cta}</em>
+            </a>
+          ))}
+        </div>
+      </section>
+    ) : null}
+
     <section class="section research-panel" aria-labelledby="platform-title">
       <div class="section-heading">
         <p class="kicker">플랫폼 역할</p>
-        <h2 id="platform-title">어디에 어떻게 연결되나</h2>
+        <h2 id="platform-title"><span>어디에 어떻게</span><span>연결되나</span></h2>
       </div>
       <div class="project-platform-grid">
         {project.platforms.map(([name, body]) => (
@@ -86,7 +105,7 @@ const relatedChannels = channels.filter((channel) => project.channelLabels?.incl
     <section class="section research-panel" aria-labelledby="next-title">
       <div class="section-heading">
         <p class="kicker">다음 작업</p>
-        <h2 id="next-title">이 프로젝트가 더 설명해야 할 것</h2>
+        <h2 id="next-title"><span>이 프로젝트가 더</span><span>설명해야 할 것</span></h2>
       </div>
       <ol class="project-next-list">
         {project.nextSteps.map((item) => <li>{item}</li>)}

@@ -58,6 +58,32 @@ export const projects = [
       ["Instagram Reels", "짧은 훈련 장면, 포스터, 팀 분위기를 빠르게 보여주는 홍보 채널."],
       ["X", "훈련 공지, 진행 상황, VRChat/VRC Boxing 관련 짧은 업데이트."]
     ],
+    examples: [
+      {
+        label: "YouTube Shorts",
+        title: "Relay Vanguard Shorts 자동화 샘플",
+        body:
+          "녹화본에서 20초 안팎의 훈련 장면을 뽑고, 1080x1920 세로 영상과 모바일용 자막으로 검수한 샘플이다.",
+        href: "https://www.youtube.com/shorts/4ZHtmbQDv18",
+        cta: "Shorts 보기"
+      },
+      {
+        label: "X 공지",
+        title: "정기 연습회 오픈 공지",
+        body:
+          "X에서는 긴 설명보다 모집 시간, 참여 방식, 방송 가능 여부를 짧게 고지하는 역할을 맡긴다.",
+        href: "https://x.com/relay_vanguard/status/2037382268763992209",
+        cta: "X 공지 보기"
+      },
+      {
+        label: "X 기록",
+        title: "첫 연습회 완료 기록",
+        body:
+          "훈련이 끝난 뒤에는 참가 감사, 해시태그, 짧은 회고를 남겨 다음 Shorts/Reels 소재와 연결한다.",
+        href: "https://x.com/relay_vanguard/status/2038649877417328864",
+        cta: "X 기록 보기"
+      }
+    ],
     channelLabels: ["Relay Vanguard YouTube", "Instagram", "Relay Vanguard X"],
     nextSteps: ["초보자도 따라오기 쉬운 훈련 공지 템플릿 정리", "훈련 하이라이트 자동 선별 기준 개선", "Relay Vanguard 전용 Shorts 제목/설명 규칙 고정"]
   },
