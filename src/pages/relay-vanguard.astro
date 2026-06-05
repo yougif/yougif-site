@@ -23,7 +23,13 @@ const logoImage = `${base}assets/media/relay-vanguard-logo.png`;
 const posterImage = `${base}assets/media/relay-final-a4.jpg`;
 const shortsImage = `${base}assets/media/relay-example-shorts.png`;
 const characterImage = `${base}assets/media/relay-vanguard-character.png`;
-const yeonmuziVrchatImage = "https://api.vrchat.cloud/api/1/image/file_28a1b990-ab11-43a2-a911-3847fa05b710/1/256";
+const relayPhotoBase = `${base}assets/media/relay-vanguard/`;
+const binyangPhoto = `${relayPhotoBase}binyang-20260602.png`;
+const katinorPhoto = `${relayPhotoBase}katinor-20260518.png`;
+const practicePhoto = `${relayPhotoBase}practice-20260602.png`;
+const rebinoaPhoto = `${relayPhotoBase}rebinoa-20260524.png`;
+const yeonmuziHumanPhoto = `${relayPhotoBase}yeonmuzi-human-20260530.png`;
+const yeonmuziRabbitPhoto = `${relayPhotoBase}yeonmuzi-rabbit-20260523.png`;
 const avatarFor = (handle: string, provider = "x") => `https://unavatar.io/${provider}/${handle}`;
 
 const promotionLinks = [
@@ -63,7 +69,8 @@ const teamMembers = [
       "Relay Vanguard 부팀장. 훈련 포스터 방향과 팀 비주얼의 중심 인물이며, 초보자도 들어오기 쉬운 연습 분위기와 코칭 흐름을 함께 잡는다.",
     href: relayX?.href ?? "https://x.com/relay_vanguard",
     cta: "팀 X",
-    avatar: yeonmuziVrchatImage,
+    avatar: yeonmuziHumanPhoto,
+    avatarPosition: "center 28%",
     badges: ["Vice Leader", "Operation", "Coach"]
   },
   {
@@ -73,7 +80,8 @@ const teamMembers = [
       "카티노르님. 호기심 많은 오토코노코 토끼, 버츄얼 아티스트로 소개되는 스트리머. Relay Vanguard 운영팀과 코치진으로 훈련 피드백과 팀 활동을 함께 이끈다.",
     href: "https://x.com/KatinorRayner",
     cta: "X",
-    avatar: avatarFor("KatinorRayner"),
+    avatar: katinorPhoto,
+    avatarPosition: "72% center",
     streamHref: "https://chzzk.naver.com/live/b84b8caa552b148c4386229fdeb76e7d",
     streamCta: "치지직",
     badges: ["Streamer", "Operation", "Coach"]
@@ -100,7 +108,8 @@ const teamMembers = [
       "빈냥님. Relay Vanguard 훈련과 팀 활동에 함께하는 멤버. VRC Boxing 방송팀의 활동 기록과 연결되는 개인 X 계정을 함께 안내한다.",
     href: "https://x.com/vrcBinMaen",
     cta: "X",
-    avatar: avatarFor("vrcBinMaen")
+    avatar: binyangPhoto,
+    avatarPosition: "center 24%"
   },
   {
     role: "팀원",
@@ -118,7 +127,8 @@ const teamMembers = [
       "레비노아님. Relay Vanguard 팀 활동과 VRC Boxing 흐름에 함께하는 멤버. X 게시글을 통해 실제 활동 기록도 함께 연결한다.",
     href: "https://x.com/Rebinoa_Phesyu",
     cta: "X",
-    avatar: avatarFor("Rebinoa_Phesyu")
+    avatar: rebinoaPhoto,
+    avatarPosition: "64% center"
   },
   {
     role: "팀원",
@@ -213,6 +223,14 @@ const examples = [
     cta: "Shorts 보기"
   },
   {
+    label: "Practice Photo",
+    title: "최근 연습회 단체 사진",
+    body: "2026년 6월 2일 연습회에서 남긴 단체 사진. Relay Vanguard가 훈련, 팀원, 방송 자료를 한 흐름으로 쌓는 모습을 보여준다.",
+    image: practicePhoto,
+    href: vrchatGroupUrl,
+    cta: "VRChat 그룹"
+  },
+  {
     label: "X Notice",
     title: "정기 연습회 공지",
     body: "언제, 어디서, 어떤 방식으로 들어오면 되는지 먼저 보이게 한다. 모집 글은 길게 설명하기보다 바로 행동할 수 있게 쓴다.",
@@ -222,9 +240,9 @@ const examples = [
   },
   {
     label: "Team Visual",
-    title: "로고와 방송 비주얼",
-    body: "방패 로고, 포스터, 썸네일, Shorts 화면을 같은 톤으로 묶어 Relay Vanguard라는 팀 이름이 반복해서 남게 만든다.",
-    image: logoImage,
+    title: "연무지 토끼폼 비주얼",
+    body: "부팀장 연무지의 토끼폼도 팀 비주얼과 방송 장면에 같이 남긴다. 캐릭터, 훈련장, VRC Boxing 로고가 한 화면에서 연결된다.",
+    image: yeonmuziRabbitPhoto,
     href: relayX?.href ?? "https://x.com/relay_vanguard",
     cta: "팀 X 보기"
   },
@@ -232,7 +250,7 @@ const examples = [
     label: "Member Post",
     title: "Rebinoa 활동 기록",
     body: "팀원 게시글도 Relay Vanguard의 실제 활동 흐름을 보여주는 자료로 연결한다.",
-    image: logoImage,
+    image: rebinoaPhoto,
     href: "https://x.com/Rebinoa_Phesyu/status/2062000967281942741?s=20",
     cta: "Rebinoa 글 보기"
   }
@@ -359,7 +377,15 @@ const contacts = [
       <div class="relay-member-grid">
         {teamMembers.map((member) => (
           <article>
-            {member.avatar ? <img class="relay-member-avatar" src={member.avatar} alt={`${member.name} 프로필 이미지`} loading="lazy" /> : null}
+            {member.avatar ? (
+              <img
+                class="relay-member-avatar"
+                src={member.avatar}
+                alt={`${member.name} 프로필 이미지`}
+                loading="lazy"
+                style={member.avatarPosition ? `object-position: ${member.avatarPosition}` : undefined}
+              />
+            ) : null}
             <span>{member.role}</span>
             <strong>{member.name}</strong>
             {member.badges?.length ? (

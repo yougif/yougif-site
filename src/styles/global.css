@@ -947,12 +947,13 @@ h2 {
 }
 
 .relay-member-avatar {
-  width: 4.75rem;
-  height: 4.75rem;
+  width: 6.75rem;
+  height: 6.75rem;
   border: 1px solid rgba(88, 215, 247, 0.28);
   border-radius: 8px;
   background: var(--panel-2);
   object-fit: cover;
+  object-position: center;
 }
 
 .relay-identity-grid strong,
