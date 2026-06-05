@@ -842,7 +842,7 @@ h2 {
 }
 
 .relay-hero-copy h1 {
-  max-width: 11ch;
+  max-width: 13ch;
   font-size: clamp(3rem, 10vw, 6.5rem);
   line-height: 0.95;
   word-break: keep-all;
@@ -890,6 +890,8 @@ h2 {
 .relay-identity-grid,
 .relay-member-grid,
 .relay-text-grid,
+.relay-language-grid,
+.relay-stat-grid,
 .relay-loop-list,
 .relay-showcase-grid,
 .relay-channel-grid,
@@ -901,6 +903,8 @@ h2 {
 .relay-identity-grid,
 .relay-member-grid,
 .relay-text-grid,
+.relay-language-grid,
+.relay-stat-grid,
 .relay-showcase-grid,
 .relay-channel-grid,
 .relay-contact-grid {
@@ -910,11 +914,15 @@ h2 {
 .relay-identity-grid article,
 .relay-member-grid article,
 .relay-text-grid article,
+.relay-language-grid article,
 .relay-loop-list li,
 .relay-showcase-card,
 .relay-principle-list li,
 .relay-channel-grid a,
 .relay-contact-panel,
+.relay-group-cover,
+.relay-rule-strip p,
+.relay-stat-grid span,
 .relay-contact-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -931,6 +939,7 @@ h2 {
 
 .relay-member-grid article,
 .relay-text-grid article,
+.relay-language-grid article,
 .relay-contact-grid article {
   display: grid;
   gap: 0.55rem;
@@ -948,6 +957,7 @@ h2 {
 
 .relay-identity-grid strong,
 .relay-member-grid strong,
+.relay-language-grid strong,
 .relay-loop-list strong,
 .relay-showcase-card strong,
 .relay-channel-grid strong,
@@ -959,6 +969,7 @@ h2 {
 .relay-identity-grid p,
 .relay-member-grid p,
 .relay-text-grid p,
+.relay-language-grid p,
 .relay-loop-list p,
 .relay-showcase-card p,
 .relay-principle-copy p,
@@ -970,6 +981,7 @@ h2 {
 }
 
 .relay-member-grid span,
+.relay-language-grid span,
 .relay-contact-grid span {
   color: var(--lime);
   font-size: 0.75rem;
@@ -999,6 +1011,8 @@ h2 {
 }
 
 .relay-member-grid a,
+.relay-member-actions a,
+.relay-language-grid a,
 .relay-contact-grid a {
   width: fit-content;
   border: 1px solid rgba(88, 215, 247, 0.36);
@@ -1011,6 +1025,10 @@ h2 {
 
 .relay-member-grid a:hover,
 .relay-member-grid a:focus-visible,
+.relay-member-actions a:hover,
+.relay-member-actions a:focus-visible,
+.relay-language-grid a:hover,
+.relay-language-grid a:focus-visible,
 .relay-contact-grid a:hover,
 .relay-contact-grid a:focus-visible {
   border-color: var(--lime);
@@ -1142,6 +1160,64 @@ h2 {
   display: grid;
   gap: 1rem;
   padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.relay-group-layout {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+.relay-group-cover {
+  overflow: hidden;
+  margin: 0;
+}
+
+.relay-group-cover img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.relay-group-cover figcaption {
+  border-top: 1px solid var(--line);
+  padding: 0.7rem 0.9rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.relay-stat-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.relay-stat-grid span {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.relay-stat-grid strong {
+  color: var(--cyan);
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+}
+
+.relay-rule-strip {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.relay-rule-strip p {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.55;
 }
 
 .scoreboard,
@@ -1430,6 +1506,10 @@ h2 {
     grid-template-columns: minmax(0, 0.9fr) minmax(24rem, 1.1fr);
   }
 
+  .relay-group-layout {
+    grid-template-columns: minmax(0, 0.95fr) minmax(22rem, 1.05fr);
+  }
+
   .relay-loop-list {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -1541,7 +1621,7 @@ h2 {
   }
 
   .relay-hero-copy h1 {
-    max-width: 8ch;
+    max-width: 10ch;
     font-size: clamp(2.25rem, 10.5vw, 2.75rem);
     line-height: 1.02;
     word-break: normal;
@@ -1575,13 +1655,21 @@ h2 {
   .relay-identity-grid article,
   .relay-member-grid article,
   .relay-text-grid article,
+  .relay-language-grid article,
   .relay-loop-list li,
   .relay-showcase-card,
   .relay-principle-list li,
   .relay-channel-grid a,
   .relay-contact-panel,
+  .relay-group-cover,
+  .relay-rule-strip p,
+  .relay-stat-grid span,
   .relay-contact-grid article {
     width: 100%;
     max-width: 100%;
+  }
+
+  .relay-stat-grid {
+    grid-template-columns: 1fr;
   }
 }
