@@ -1,52 +1,42 @@
 # Yougif Site Agent Rules
 
-## Identity Separation
+## Identity & Identity Separation
 
-This repository is for the independent Yougif broadcast and VRC Boxing site only.
+- **Active Identity:** `Yougif / 유기프` (Broadcast/VTuber/VRChat/VRC Boxing Creator).
+- **Core Rule:** This repository and all its outputs (site, code, commits, docs) must be **strictly separate** from the `ytkim4558` / `ytkim` professional identity.
+- **Forbidden Content:** Do NOT add real-name career material, employer identity, AWS/DevOps professional portfolio links, or any company-related details.
+- **GitHub Account:** Use the `yougif` account/organization only. Remote host alias: `github.com-yougif`.
+- **Auth/Keys:** Never reuse `ytkim`'s `gh auth`, SSH keys, or tokens for this repo.
 
-Do not add:
+## Team Structure
 
-- real-name professional career material
-- company career content
-- links to unrelated personal career sites or generator projects
-- tokens, API keys, cookies, OAuth secrets, or private key material
+- **Leader:** `Yougif / 유기프` (Team operation, broadcast setup, recording management, Shorts/Reels quality control).
+- **Vice Leader:** `yeonmuzi_연무지` (Team visual lead, poster direction, coaching atmosphere).
 
-## GitHub Account Rules
+## Site Goal & Design Principles
 
-- GitHub repository owner must be `yougif`.
-- Remote must use the Yougif-only SSH host alias, expected as `github.com-yougif`.
-- Do not create remotes or push to any non-Yougif account.
-- Do not reuse non-Yougif GitHub auth, tokens, or SSH keys.
-- If Yougif `gh` authentication or the Yougif SSH host alias is not available, stop before remote creation or push.
+- **Not a Portfolio:** This is a visual broadcast/team site, **NOT a professional portfolio**. Avoid "Portfolio" terminology.
+- **Visual-First:** Prefer visual elements and data visualization over text-heavy wiki-style documentation.
+- **Clear Language:** Use direct and easy-to-understand language for visitors. No technical jargon unless necessary for the content (e.g., boxing terms).
+- **VRC Boxing Visualization:** Separate research data from curated VRC Boxing content. Visualize the training flow and highlights clearly.
 
-## Site Goal
+## Required Sections & Behavior
 
-Build a visual broadcast/team site, not a wiki-style documentation site.
+- **Sections:** Hero, Projects, Gallery, Workflow, Automation, Links.
+- **Responsive:** Mobile-first, no horizontal overflow.
+- **Interactive:** Project cards open detail modals, gallery must be easy to read on all devices.
 
-Required sections:
+## Operational Workflow
 
-- Hero
-- Projects / 프로젝트
-- Gallery / 갤러리
-- Workflow / 운영 흐름
-- Automation / 자동화
-- Links / 공개 링크
-
-Required behavior:
-
-- Mobile-first layout
-- Project cards open detail modals
-- Gallery / 갤러리는 모바일과 데스크톱에서 모두 읽기 쉬워야 한다
-- Internal links work
-- Images are not broken
-- No horizontal overflow
+- **Slack Reporting:** Report all progress to the Slack channel `Yougif DevOps` continuously until told to stop.
+- **Deployment:** Canonical URL is `https://yougif.pages.dev/`. Use Astro on Cloudflare Pages/Workers.
+- **GitHub Pages:** Redirect-only legacy fallback (`https://yougif.github.io/yougif-site/`).
 
 ## Validation
 
-Before handoff, run:
-
+Before handoff or completion, run:
 ```powershell
 npm run build
 npm run validate
-a forbidden-string scan supplied by the current task owner
+# Scan for forbidden strings (ytkim, real name, professional career terms)
 ```

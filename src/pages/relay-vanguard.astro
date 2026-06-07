@@ -51,7 +51,7 @@ const teamMembers = [
     role: "팀장",
     name: "유 기 프",
     body:
-      "VRChat 표시 이름은 유 기 프. Relay Vanguard 팀장으로 팀 운영, 방송 세팅, 녹화본 정리, Shorts/Reels 검수 흐름을 맡고, 훈련 장면이 방송과 숏폼으로 이어지게 만든다.",
+      "Relay Vanguard 팀장. 팀 운영 전반, 방송 세팅, 녹화본 관리, 그리고 Shorts/Reels 검수 흐름을 총괄하며 훈련 장면이 가치 있는 콘텐츠로 이어지게 만든다.",
     href: yougifVrchatUrl,
     cta: "VRChat",
     avatar: yougifChzzkImage,
@@ -66,7 +66,7 @@ const teamMembers = [
     role: "부팀장",
     name: "yeonmuzi_연무지",
     body:
-      "Relay Vanguard 부팀장. 훈련 포스터 방향과 팀 비주얼의 중심 인물이며, 초보자도 들어오기 쉬운 연습 분위기와 코칭 흐름을 함께 잡는다.",
+      "Relay Vanguard 부팀장. 팀 비주얼의 중심이자 훈련 포스터 방향을 결정하며, 초보자가 들어오기 쉬운 연습 분위기와 코칭 흐름을 함께 잡는다.",
     href: relayX?.href ?? "https://x.com/relay_vanguard",
     cta: "팀 X",
     avatar: yeonmuziHumanPhoto,
@@ -159,70 +159,87 @@ const teamMembers = [
 ];
 
 const vrcBoxingPoints = [
-  "VRChat 안에서 몸을 움직이며 펀치, 가드, 거리 조절을 겨루는 VR 복싱 콘텐츠다.",
-  "단순 게임 플레이가 아니라 체력, 리듬, 매너, 공간 감각이 같이 필요한 활동이다.",
-  "방송에서는 스파링 장면, 훈련 피드백, 참가자 반응이 Shorts/Reels 소재로 이어진다."
+  "잽과 스트레이트의 차이, 카운터 타이밍, 바디 블로우 등 기본기부터 실전 기술까지 체계적으로 다룬다.",
+  "공격 후 즉시 가드 자세로 돌아오는 '리커버리'와 링을 넓게 쓰는 'U자 스텝'을 기초 훈련의 핵심으로 삼는다.",
+  "단순한 타격 연습을 넘어 샌드백 치기 요령, 거리 조절, 상대 움직임 읽기 등 심리전과 전략을 함께 배운다."
 ];
 
 const groupPoints = [
-  "Relay Vanguard는 한국인에게 VRC Boxing을 알리기 위한 방송 친화형 VRChat 복싱 그룹이다.",
-  "연습회는 Group+로 열리며 그룹 가입 없이도 누구나 참여할 수 있다.",
-  "입장 시 방송, 녹화, 클립, 편집 영상 노출에 동의한 것으로 본다.",
-  "정식 팀원 가입은 참석률, 한국어 소통, 매너와 스포츠십을 확인한 뒤 Discord yougif의 최종 승인으로 결정한다."
+  "VRC Boxing & Combat Sports Community. 'We train, we fight, we relay.'",
+  "과도한 친목보다는 운동과 실력 향상에 집중하며, 모든 멤버가 소외 없이 기술을 연마할 수 있는 분위기를 지향한다.",
+  "정기 연습회는 매주 월요일과 토요일 오후 9시(21:00)에 진행되며, 누구나 참여 가능한 Group+ 인스턴스로 열린다.",
+  "방송 친화형 오픈 스튜디오로서 모든 참가자는 방송, 녹화, 클립 편집 및 공개에 동의한 것으로 간주한다.",
+  "스포츠맨십과 매너를 최우선으로 하며, 실력의 우열보다 꾸준한 참여와 소통을 정식 팀원 선발의 기준으로 삼는다."
 ];
 
 const languageGuides = [
   {
     lang: "한국어",
-    title: "한국어 안내",
+    title: "One Ring, Many Voices",
     body:
-      "한국인에게 VRC Boxing을 알리기 위한 방송 친화형 VRChat 복싱 그룹이다. Group+ 연습회는 그룹 가입 없이도 누구나 참여할 수 있고, 참가자는 방송/녹화/클립 노출에 동의한 것으로 본다.",
+      "누구나 쉽게 시작하고 오래 즐기는 VR 복싱 문화를 만듭니다. 실력보다 꾸준함과 스포츠십을 중요하게 생각하며, 시행착오와 작은 깨달음을 통해 함께 성장하는 오픈 스튜디오를 지향합니다.",
     cta: "VRChat 그룹 열기"
   },
   {
     lang: "English",
-    title: "English Guide",
+    title: "One Ring, Many Voices",
     body:
-      "Relay Vanguard is a broadcast-friendly VRChat boxing group created to introduce VRC Boxing to Korean players and viewers. Group+ practice sessions are open to everyone without group membership.",
+      "A broadcast-friendly open studio for VRC Boxing. We value consistency and sportsmanship over skill, pursuing a culture of growing together through trial and error.",
     cta: "Open VRChat Group"
   },
   {
     lang: "日本語",
-    title: "日本語ガイド",
+    title: "一人の링, 多くの声",
     body:
-      "Relay Vanguardは韓国のユーザーにVRC Boxingを紹介するための配信フレンドリーなVRChatボクシンググループです。Group+練習会はグループ未加入でも誰でも参加できます。",
-    cta: "VRChatグループ"
+      "誰もが簡単に始められ, 長く楽しめるVRボクシング文化を目指します. 実력보다 継続과 スポーツマンシップを重視し, 共に成長するオープンスタジオです.",
+    cta: "VRChat그룹"
   }
 ];
 
 const membershipRules = [
-  "초대나 추천만으로 정식 팀원이 확정되지는 않는다.",
-  "공식 가입 테스트와 최종 승인은 Discord yougif만 진행한다.",
-  "가입 후에도 장기간 연습회 참여가 없거나 팀 규칙과 매너를 지키지 않으면 팀원 유지가 제한될 수 있다."
+  "정식 팀원은 실력보다 꾸준함, 소통 능력, 그리고 스포츠십을 최우선으로 선발한다.",
+  "스트리머가 아니거나 타 팀 소속이라도 방송 송출 동의만 있다면 정기 연습회 참여에 제한이 없다.",
+  "공식 가입 문의와 최종 승인은 Discord 'yougif'를 통해 체계적으로 진행된다."
 ];
 
 const foundingReasons = [
-  "더 많은 사람이 VRChat 안에서 몸을 움직이며 겨루는 VRC Boxing의 재미를 알았으면 하는 마음에서 시작했다.",
-  "방송을 켤 때마다 눈치를 보는 분위기보다, 방송과 녹화가 자연스럽게 받아들여지는 연습 환경을 만들고 싶었다.",
-  "운동은 자유롭게 하고, 방송은 떳떳하게 남기며, 초보자와 공식선수가 같이 성장하는 건전한 VRC Boxing 문화를 만드는 것이 목표다."
+  "누구나 쉽게 시작하고 오래 즐기는 VR 복싱 환경을 만들기 위해 시작했다.",
+  "단순한 승패보다 시행착오와 작은 깨달음을 통해 함께 성장하는 과정을 가치 있게 여긴다.",
+  "선봉에 서서 릴레이를 이어가듯, 훈련 장면을 숏폼 콘텐츠로 재생산하여 VRC Boxing의 재미를 널리 알리고자 한다."
 ];
 
 const operatingLoop = [
-  ["01", "공지", "X에서 훈련 시간, 참여 방식, 방송 가능 여부를 짧게 알린다."],
-  ["02", "입장", "VRChat Group+ 인스턴스에서 매너와 방송 동의 기준을 먼저 확인한다."],
-  ["03", "훈련", "짧은 펀치, 빠른 복귀, 가드 유지처럼 좁은 공간에서도 가능한 동작을 반복한다."],
-  ["04", "스파링", "초보자와 숙련자가 섞일 때는 세게 이기는 것보다 피드백 가능한 장면을 만든다."],
-  ["05", "편집", "녹화본에서 좋은 장면을 골라 YouTube Shorts, Instagram Reels, X 기록으로 남긴다."]
+  ["01", "공지", "X(@relay_vanguard)를 통해 정기 연습(월/토 21:00) 일정과 오늘의 훈련 테마를 공지한다."],
+  ["02", "입장", "VRChat Group+ 인스턴스에 입장하여 방송 동의 가이드 및 훈련 수칙을 확인한다."],
+  ["03", "기초", "잽, 스트레이트, 리커버리, U자 스텝 등 기본기와 발보법을 집중적으로 반복 숙달한다."],
+  ["04", "응용", "샌드백 치기, 거리 조절, 카운터 타이밍 등 실전 기술을 피드백과 함께 연습한다."],
+  ["05", "기록", "훈련 하이라이트를 YouTube Shorts '기초 꿀팁' 시리즈와 X 아카이브로 남겨 공유한다."]
 ];
 
 const examples = [
   {
     label: "YouTube Shorts",
-    title: "훈련 장면을 세로 숏츠로 검수",
-    body: "로컬 녹화본에서 20초 안팎 구간을 뽑고, 모바일에서 읽히는 자막과 1080x1920 세로 화면으로 정리한다.",
+    title: "기초 꿀팁: 리커버리 (Recovery)",
+    body: "공격 후 즉시 방어 자세로 돌아오는 '리커버리'의 중요성과 실전 적용법을 다룬다.",
     image: shortsImage,
     href: "https://www.youtube.com/shorts/4ZHtmbQDv18",
     cta: "Shorts 보기"
+  },
+  {
+    label: "Footwork",
+    title: "안전한 이동: U자 스텝",
+    body: "상대의 사각지대를 잡고 링을 넓게 쓰는 효율적인 발보법(Footwork) 교육 영상.",
+    image: practicePhoto,
+    href: "https://www.youtube.com/shorts/vrc_ustep_placeholder",
+    cta: "기술 보기"
+  },
+  {
+    label: "Tactics",
+    title: "카운터와 거리 조절",
+    body: "상대의 움직임을 읽고 정확한 타이밍에 카운터를 꽂는 전략적인 스파링 장면.",
+    image: posterImage,
+    href: "https://www.youtube.com/shorts/vrc_counter_placeholder",
+    cta: "전략 보기"
   },
   {
     label: "Practice Photo",
@@ -273,13 +290,13 @@ const contacts = [
   <header class="site-header">
     <a class="brand" href={base}>Relay Vanguard</a>
     <nav aria-label="Relay Vanguard 메뉴">
-      <a href="#team">팀 소개</a>
+      <a href="#team">우리 팀</a>
       <a href="#group">VRChat 그룹</a>
       <a href="#languages">Languages</a>
       <a href="#vrcboxing">VRC Boxing</a>
-      <a href="#operation">운영 방식</a>
-      <a href="#media">미디어</a>
-      <a href="#contact">문의</a>
+      <a href="#operation">훈련 방식</a>
+      <a href="#media">실제 장면</a>
+      <a href="#contact">연락처</a>
     </nav>
   </header>
 
@@ -440,7 +457,7 @@ const contacts = [
     <section class="relay-section relay-loop" id="operation" aria-labelledby="operation-title">
       <div class="section-heading">
         <p class="kicker">How We Operate</p>
-        <h2 id="operation-title">운영 방식</h2>
+        <h2 id="operation-title">훈련 방식</h2>
       </div>
       <ol class="relay-loop-list">
         {operatingLoop.map(([step, title, body]) => (
@@ -456,7 +473,7 @@ const contacts = [
     <section class="relay-section relay-showcase" id="media" aria-labelledby="media-title">
       <div class="section-heading">
         <p class="kicker">Actual Media</p>
-        <h2 id="media-title">실제로 보여주는 것</h2>
+        <h2 id="media-title">실제 훈련 장면</h2>
       </div>
       <div class="relay-showcase-grid">
         {examples.map((example) => (
@@ -474,7 +491,7 @@ const contacts = [
     <section class="relay-section relay-contact" id="contact" aria-labelledby="contact-title">
       <div class="section-heading">
         <p class="kicker">Contact</p>
-        <h2 id="contact-title">참가와 문의</h2>
+        <h2 id="contact-title">함께하는 방법</h2>
       </div>
       <div class="relay-contact-panel">
         <p>

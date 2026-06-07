@@ -19,8 +19,8 @@ const loop = [
     <a class="brand" href={base}>Yougif</a>
     <nav aria-label="Yougif Workflow 메뉴">
       <a href={base}>홈</a>
-      <a href="#notes">작업기</a>
-      <a href="#loop">루프</a>
+      <a href="#notes">기록</a>
+      <a href="#loop">순서</a>
       <a href="#private">Private</a>
       <a href={`${base}#links`}>링크</a>
     </nav>
@@ -40,8 +40,8 @@ const loop = [
 
     <section class="section research-panel" id="notes" aria-labelledby="notes-title">
       <div class="section-heading">
-        <p class="kicker">작업기</p>
-        <h2 id="notes-title">최근 운영 기록</h2>
+        <p class="kicker">운영 기록</p>
+        <h2 id="notes-title">최근 기록</h2>
       </div>
       <div class="workflow-note-grid">
         {workflowNotes.map((note) => (
@@ -63,8 +63,8 @@ const loop = [
 
     <section class="section research-panel" id="loop" aria-labelledby="loop-title">
       <div class="section-heading">
-        <p class="kicker">운영 루프</p>
-        <h2 id="loop-title">영상이 작업기가 되는 순서</h2>
+        <p class="kicker">작업 루프</p>
+        <h2 id="loop-title">영상이 기록이 되는 순서</h2>
       </div>
       <ol class="workflow-loop">
         {loop.map(([step, title, body]) => (

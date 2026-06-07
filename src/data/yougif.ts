@@ -48,11 +48,11 @@ export const projects = [
     href: `${base}projects/relay-vanguard/`,
     homeHref: `${base}relay-vanguard/`,
     intro:
-      "Relay Vanguard는 VRC Boxing을 한국어 방송과 숏폼에 맞게 풀어내는 팀 프로젝트다. 단순 친목 모임이 아니라 훈련 공지, 팀 비주얼, 경기/스파링 기록, Shorts 하이라이트까지 연결되는 운영 단위로 만든다.",
+      "Relay Vanguard는 'One Ring, Many Voices'를 슬로건으로 누구나 쉽게 시작하고 오래 즐기는 VR 복싱 문화를 만드는 팀 프로젝트다. 단순 친목을 넘어 매주 월/토 21:00 정기 연습, 팀 비주얼 관리, 데이터 기반 피드백, 그리고 Shorts 하이라이트 자동화까지 연결되는 운영 단위로 만든다.",
     highlights: [
-      "VRChat VRC Boxing 월드와 공식 생태계를 기반으로 한국어 훈련 흐름을 만든다.",
-      "Relay Vanguard 로고, 포스터, 썸네일, 장갑/복장 같은 팀 비주얼을 일관되게 관리한다.",
-      "연습 장면은 방송 소재, YouTube Shorts, Instagram Reels, 팀 홍보 자료로 재사용한다."
+      "VRChat VRC Boxing 월드를 기반으로 잽, 스트레이트, 리커버리, U자 스텝 등 기본기 중심의 체계적인 훈련 흐름을 만든다.",
+      "과도한 친목보다 기술 향상과 운동 자체에 집중하는 분위기를 유지하며, 모든 참가자가 소외 없이 성장할 수 있는 환경을 지향한다.",
+      "연습 장면은 카운터 타이밍, 바디 블로우 등 실전 팁을 담은 YouTube Shorts '기초 꿀팁' 시리즈로 재생산한다."
     ],
     platforms: [
       ["Relay Vanguard YouTube", "팀 훈련 영상과 VRC Boxing 하이라이트를 올리는 팀 채널.", "Relay Vanguard YouTube"],
@@ -62,9 +62,9 @@ export const projects = [
     examples: [
       {
         label: "YouTube Shorts",
-        title: "Relay Vanguard Shorts 자동화 샘플",
+        title: "짧게 치고 복귀 (Recovery)",
         body:
-          "녹화본에서 20초 안팎의 훈련 장면을 뽑고, 1080x1920 세로 영상과 모바일용 자막으로 검수한 샘플이다.",
+          "공격 후 즉시 방어 자세나 기본 스탠스로 돌아오는 리커버리의 중요성을 담은 기초 꿀팁 영상이다.",
         image: asset("assets/media/relay-example-shorts.png"),
         href: "https://www.youtube.com/shorts/4ZHtmbQDv18",
         cta: "Shorts 보기"
@@ -264,6 +264,21 @@ export const workflow = [
 ];
 
 export const workflowNotes = [
+  {
+    title: "Multi-Platform Dashboard Automation & Troubleshoot",
+    date: "2026-06-08",
+    tag: "Automation / Troubleshooting",
+    summary:
+      "윈폼 위젯 런처의 UI 꼬임 복구, OneDrive 동기화 락 충돌 방어, 윈도우 한/영 입력기 간섭 우회, 그리고 SOOP(아프리카TV) iframe 격리 구조 우회를 위한 멀티 플랫폼 대시보드 자동 주입 매크로를 개발하고 연동했다.",
+    points: [
+      "윈폼 크기 부족 및 AutoScroll 비활성화로 플랫폼 행 추가 시 컴포넌트가 겹치던 UI 꼬임 현상을 창 크기 확장(780x580) 및 레이아웃 제어로 복구했다.",
+      "OneDrive 동기화 디렉토리 특성상 파일 쓰기 시 발생하는 락 충돌(Sharing Violation)을 300ms 주기 최대 5회 재시도(Retry Loop) 처리로 해결했다.",
+      "윈도우 IME가 한글 모드일 때 pyautogui 영문 기입 시 자모가 쪼개지던 버그를 imm32.dll API(ImmSetConversionStatus) 호출을 통해 영문 모드 강제 리셋으로 방어했다.",
+      "크롬 주소창의 javascript: 붙여넣기 차단 보안을 뚫기 위해 본문은 복사-붙여넣기하고 접두사만 직접 치는 하이브리드 주입 매크로를 제작해 입력 딜레이를 0.05초로 단축했다.",
+      "SOOP 대시보드처럼 폼이 iframe 내에 격리된 구조를 뚫기 위해 Same-Origin iframe 재귀 탐색 알고리즘(findEl)을 매크로 자바스크립트에 탑재했다."
+    ],
+    status: "integrated & tested successfully"
+  },
   {
     title: "Relay Vanguard Shorts Pipeline",
     date: "2026-06-01",
