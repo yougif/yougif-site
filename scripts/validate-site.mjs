@@ -21,7 +21,8 @@ function walk(dir) {
 
 walk(root);
 
-const textFiles = files.filter((file) => /\.(astro|css|js|json|md|mjs|svg|ts)$/i.test(file));
+const skippedTextFiles = new Set(["package-lock.json"]);
+const textFiles = files.filter((file) => /\.(astro|css|js|json|md|mjs|svg|ts)$/i.test(file) && !skippedTextFiles.has(file.split(/[\\/]/).at(-1)));
 const text = new Map(textFiles.map((file) => [file, readFileSync(file, "utf8")]));
 const badTerms = [
   ["y", "t", "k", "i", "m"].join(""),

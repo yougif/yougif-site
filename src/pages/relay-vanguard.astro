@@ -13,6 +13,7 @@ const instagram = channelByLabel.get("Instagram");
 const vrchatGroupUrl = "https://vrchat.com/home/group/grp_1cf18497-a232-4847-ba68-eea5b168a56e";
 const vrchatMembersUrl = `${vrchatGroupUrl}/members`;
 const yougifVrchatUrl = "https://vrchat.com/home/user/usr_7d6ccbbb-95d3-4416-8e1d-8c5c1f8374d6";
+const rebinoaVrchatUrl = "https://vrchat.com/home/user/usr_91d006cb-f8f3-4acd-a914-3e027f63fadf";
 const yougifChzzkUrl = "https://chzzk.naver.com/9b3c8f69447bed843261721afb6a96f4";
 const vrchatShortUrl = "https://vrc.group/RLYVG.8352";
 const vrchatBannerImage = "https://api.vrchat.cloud/api/1/file/file_a87b183b-a277-45ce-b304-bde98ca3d787/1/file";
@@ -50,6 +51,7 @@ const teamMembers = [
   {
     role: "팀장",
     name: "유 기 프",
+    alias: "yougif / 팀장",
     body:
       "Relay Vanguard 팀장. 팀 운영 전반, 방송 세팅, 녹화본 관리, 그리고 Shorts/Reels 검수 흐름을 총괄하며 훈련 장면이 가치 있는 콘텐츠로 이어지게 만든다.",
     href: yougifVrchatUrl,
@@ -65,6 +67,7 @@ const teamMembers = [
   {
     role: "부팀장",
     name: "yeonmuzi_연무지",
+    alias: "연무지님 / 부팀장",
     body:
       "Relay Vanguard 부팀장. 팀 비주얼의 중심이자 훈련 포스터 방향을 결정하며, 초보자가 들어오기 쉬운 연습 분위기와 코칭 흐름을 함께 잡는다.",
     href: relayX?.href ?? "https://x.com/relay_vanguard",
@@ -75,7 +78,8 @@ const teamMembers = [
   },
   {
     role: "팀원",
-    name: "Katinor Rayner",
+    name: "Katinor",
+    alias: "Katinor Rayner / 카티노르님",
     body:
       "카티노르님. 호기심 많은 오토코노코 토끼, 버츄얼 아티스트로 소개되는 스트리머. Relay Vanguard 운영팀과 코치진으로 훈련 피드백과 팀 활동을 함께 이끈다.",
     href: "https://x.com/KatinorRayner",
@@ -88,7 +92,8 @@ const teamMembers = [
   },
   {
     role: "운영팀",
-    name: "Sandy",
+    name: "sandy_it",
+    alias: "샌디님 / 네트워크·디스코드 운영",
     body:
       "SNRD NETWORKS LIMITED를 운영하는 네트워크 담당 엔지니어. AS209710 운영과 VSTYLE X LINK 흐름을 함께 다루며, Relay Vanguard 운영팀으로 커뮤니티 동선과 디스코드 운영 흐름을 지원한다.",
     href: "https://x.com/sandy_it05",
@@ -103,7 +108,8 @@ const teamMembers = [
   },
   {
     role: "팀원",
-    name: "빈냥",
+    name: "☞★빈남입니다☆☜",
+    alias: "빈냥님",
     body:
       "빈냥님. Relay Vanguard 훈련과 팀 활동에 함께하는 멤버. VRC Boxing 방송팀의 활동 기록과 연결되는 개인 X 계정을 함께 안내한다.",
     href: "https://x.com/vrcBinMaen",
@@ -115,6 +121,7 @@ const teamMembers = [
   {
     role: "팀원",
     name: "시로",
+    alias: "aosorasiho",
     body:
       "시로님. Relay Vanguard 팀 활동에 함께하는 멤버. 훈련 공지와 팀 활동 흐름은 Relay Vanguard X와 개인 X 링크로 이어서 확인할 수 있다.",
     href: "https://x.com/aosorasiho",
@@ -123,18 +130,23 @@ const teamMembers = [
   },
   {
     role: "팀원",
-    name: "레비노아",
+    name: "レビノア",
+    alias: "레비노아님",
     body:
       "레비노아님. Relay Vanguard 팀 활동과 VRC Boxing 흐름에 함께하는 멤버. X 게시글을 통해 실제 활동 기록도 함께 연결한다.",
-    href: "https://x.com/Rebinoa_Phesyu",
-    cta: "X",
+    href: rebinoaVrchatUrl,
+    cta: "VRChat",
     avatar: rebinoaPhoto,
     avatarPosition: "64% center",
+    extraLinks: [
+      ["X", "https://x.com/Rebinoa_Phesyu"]
+    ],
     badges: ["Official Player"]
   },
   {
     role: "팀원",
-    name: "도라",
+    name: "LEEDORA",
+    alias: "이도라님",
     body:
       "이도라님. 마작방송, 테이블탑 방송 등 여러 방송을 하는 스트리머. 마작을 배우고 싶은 사람에게 안내할 수 있는 친근한 방송/게임 진행자다.",
     href: "https://x.com/IngMajag",
@@ -147,6 +159,7 @@ const teamMembers = [
   {
     role: "팀원",
     name: "Rapiya",
+    alias: "라피야님",
     body:
       "라피야님. VRC Main, Boxing을 중심으로 활동하는 스트리머. Relay Vanguard 운영팀과 코치진으로 스파링 감각과 VRC Boxing 훈련 방향을 함께 잡는다.",
     href: "https://x.com/Rape_ya",
@@ -407,6 +420,7 @@ const contacts = [
             ) : null}
             <span>{member.role}</span>
             <strong>{member.name}</strong>
+            {member.alias ? <small class="relay-member-alias">{member.alias}</small> : null}
             {member.badges?.length ? (
               <div class="relay-member-badges">
                 {member.badges.map((badge) => <em>{badge}</em>)}

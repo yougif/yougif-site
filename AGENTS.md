@@ -3,10 +3,10 @@
 ## Identity & Identity Separation
 
 - **Active Identity:** `Yougif / 유기프` (Broadcast/VTuber/VRChat/VRC Boxing Creator).
-- **Core Rule:** This repository and all its outputs (site, code, commits, docs) must be **strictly separate** from the `ytkim4558` / `ytkim` professional identity.
-- **Forbidden Content:** Do NOT add real-name career material, employer identity, AWS/DevOps professional portfolio links, or any company-related details.
+- **Core Rule:** This repository and all its outputs (site, code, commits, docs) must be **strictly separate** from the owner's professional identity.
+- **Forbidden Content:** Do NOT add real-name career material, employer identity, cloud/DevOps professional portfolio links, or any company-related details.
 - **GitHub Account:** Use the `yougif` account/organization only. Remote host alias: `github.com-yougif`.
-- **Auth/Keys:** Never reuse `ytkim`'s `gh auth`, SSH keys, or tokens for this repo.
+- **Auth/Keys:** Never reuse personal-career account auth, SSH keys, or tokens for this repo.
 
 ## Team Structure
 
@@ -38,5 +38,5 @@ Before handoff or completion, run:
 ```powershell
 npm run build
 npm run validate
-# Scan for forbidden strings (ytkim, real name, professional career terms)
+# Scan for forbidden strings, real-name material, and professional career terms.
 ```

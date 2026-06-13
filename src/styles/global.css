@@ -965,6 +965,16 @@ h2 {
 .relay-contact-grid strong {
   color: var(--text);
   font-size: 1.15rem;
+  overflow-wrap: anywhere;
+}
+
+.relay-member-alias {
+  margin-top: -0.25rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .relay-identity-grid p,
