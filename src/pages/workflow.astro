@@ -13,6 +13,13 @@ const loop = [
   ["04", "Review", "private 저장 후 제목, 설명, 재생목록, 움직임을 검수한다."],
   ["05", "Publish", "공개 가능한 결과만 Shorts/Reels와 링크 허브에 연결한다."]
 ];
+
+const studioFeatures = [
+  ["후보 플레이어", "숏츠와 포스터 후보를 한 화면에서 바로 재생하고 비교한다."],
+  ["승인 게이트", "승인, 보류, 거절, 피드백을 로컬 sidecar에 저장해 중복 업로드를 막는다."],
+  ["계정 연결 분리", "리뷰 모드는 토큰 없이 동작하고, 업로드는 사용자가 명시적으로 켠다."],
+  ["저부하 학습", "PC가 바쁘지 않을 때만 로컬 메타데이터를 쌓아 후보 선별 기준을 개선한다."]
+];
 ---
 <BaseLayout title="Yougif Workflow | 운영 작업기" description="Yougif 방송, Relay Vanguard, Shorts 자동화 운영 작업기.">
   <header class="site-header">
@@ -75,6 +82,34 @@ const loop = [
           </li>
         ))}
       </ol>
+    </section>
+
+    <section class="section research-panel creator-studio-showcase" id="creator-studio" aria-labelledby="creator-studio-title">
+      <div class="section-heading">
+        <p class="kicker">Creator Studio</p>
+        <h2 id="creator-studio-title">토큰 없이 켜지는 로컬 리뷰 작업실</h2>
+      </div>
+      <div class="creator-studio-layout">
+        <figure class="creator-studio-screen">
+          <img src={`${base}assets/media/creator-studio-mockup.png`} alt="Yougif Creator Studio 현황판과 후보 플레이어 목업" />
+          <figcaption>공개용 목업. 실제 후보 영상과 토큰 정보는 사이트에 포함하지 않는다.</figcaption>
+        </figure>
+        <div class="creator-studio-copy">
+          <p>
+            Yougif Creator Studio는 긴 방송 녹화본에서 만든 숏츠 후보, 썸네일, 포스터, 업로드 상태를
+            한 곳에서 보는 로컬 작업실이다. 코드는 비공개 저장소에서 관리하고, 사이트에는 공개 가능한
+            운영 방식과 결과만 소개한다.
+          </p>
+          <div class="creator-studio-feature-grid">
+            {studioFeatures.map(([title, body]) => (
+              <article>
+                <strong>{title}</strong>
+                <p>{body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section research-panel private-workflow" id="private" aria-labelledby="private-title">

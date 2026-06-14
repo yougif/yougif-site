@@ -534,6 +534,12 @@ h2 {
   }
 }
 
+@media (max-width: 820px) {
+  .creator-studio-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .workflow-note-grid,
 .workflow-loop {
   display: grid;
@@ -647,6 +653,67 @@ h2 {
 
 .private-note {
   margin-top: 0.85rem;
+}
+
+.creator-studio-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.creator-studio-screen {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.creator-studio-screen img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.creator-studio-screen figcaption {
+  padding: 0.75rem 0.9rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.creator-studio-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.creator-studio-copy > p,
+.creator-studio-feature-grid p {
+  color: var(--muted);
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.creator-studio-feature-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.creator-studio-feature-grid article {
+  display: grid;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.9rem;
+  background: var(--panel);
+}
+
+.creator-studio-feature-grid strong {
+  color: var(--text);
+  font-size: 1.02rem;
 }
 
 .project-detail-page {
