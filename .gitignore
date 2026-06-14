@@ -6,6 +6,7 @@ dist-github-pages/
 private/
 *.sqlite
 .wrangler/
+diagnostics/
 .env
 .env.*
 !.env.example

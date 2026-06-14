@@ -265,6 +265,20 @@ export const workflow = [
 
 export const workflowNotes = [
   {
+    title: "OVR Toolkit SteamVR Input Binding Recovery",
+    date: "2026-06-15",
+    tag: "VRChat / OVR Toolkit / Troubleshooting",
+    summary:
+      "Quest Pro Air Link 환경에서 OVR Toolkit 창에 포인터는 올라가지만 클릭이 전혀 먹지 않던 문제를 SteamVR Input 바인딩 상태 점검으로 분리했다. OVR Toolkit overlay가 Steam Workshop 커스텀 바인딩에 고정되어 있었고, 해당 override를 제거해 기본 Oculus Touch 바인딩으로 복구했다.",
+    points: [
+      "SteamVR 설정 파일에서 `steam.overlay.1068820` 항목이 `vr-input-workshop://3743941988`로 고정된 것을 확인했다.",
+      "OVR Toolkit 기본 바인딩 파일의 Oculus Touch 트리거는 `/actions/ui/in/leftclick`에 정상 연결되어 있어 앱 자체보다 커스텀 바인딩 override가 원인이라고 판단했다.",
+      "`steamvr.vrsettings`를 백업한 뒤 OVR Toolkit overlay 바인딩 override만 제거했고, 재실행 후 창 클릭이 정상 동작하는 것을 확인했다.",
+      "Oculus SteamVR manifest, SteamVR Input, OVR Toolkit, VRCFaceTracking 모듈 상태를 매번 수동으로 추적하지 않도록 읽기 전용 점검 스크립트를 추가했다."
+    ],
+    status: "fixed & diagnostic script added"
+  },
+  {
     title: "Multi-Platform Dashboard Automation & Troubleshoot",
     date: "2026-06-08",
     tag: "Automation / Troubleshooting",

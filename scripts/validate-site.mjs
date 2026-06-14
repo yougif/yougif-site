@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const root = process.cwd();
-const skipDirs = new Set(["node_modules", "dist", ".astro", ".git", ".wrangler", "private"]);
+const skipDirs = new Set(["node_modules", "dist", ".astro", ".git", ".wrangler", "private", "diagnostics"]);
 const files = [];
 const errors = [];
 
