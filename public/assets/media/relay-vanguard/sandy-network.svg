@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Sandy network profile visual</title>
+  <desc id="desc">A Relay Vanguard network operations profile visual for Sandy.</desc>
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#58d7f7" stop-opacity=".38"/>
+      <stop offset=".42" stop-color="#17202b"/>
+      <stop offset="1" stop-color="#080a0f"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#58d7f7"/>
+      <stop offset="1" stop-color="#b7f26d"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#f7f8fb" stroke-width="2">
+    <path d="M80 210h740M80 340h740M80 470h740M80 600h740M80 730h740"/>
+    <path d="M180 90v720M320 90v720M460 90v720M600 90v720M740 90v720"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="450" cy="450" r="245" fill="#101620" stroke="url(#line)" stroke-width="8"/>
+    <path d="M288 492c74-112 250-112 324 0" fill="none" stroke="#58d7f7" stroke-width="24" stroke-linecap="round"/>
+    <path d="M340 540c46-70 174-70 220 0" fill="none" stroke="#b7f26d" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="288" cy="492" r="28" fill="#58d7f7"/>
+    <circle cx="612" cy="492" r="28" fill="#58d7f7"/>
+    <circle cx="450" cy="540" r="28" fill="#b7f26d"/>
+    <circle cx="450" cy="330" r="82" fill="#080a0f" stroke="#f7f8fb" stroke-width="8"/>
+    <path d="M386 330h128M450 266v128" stroke="#f7f8fb" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <text x="450" y="690" fill="#f7f8fb" font-family="Arial, sans-serif" font-size="84" font-weight="800" text-anchor="middle">SANDY</text>
+  <text x="450" y="752" fill="#aab4c3" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle">NETWORK / DISCORD OPS</text>
+</svg>
