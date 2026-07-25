@@ -62,7 +62,12 @@ const studioFeatures = [
             <ul>
               {note.points.map((point) => <li>{point}</li>)}
             </ul>
-            <span class="status-pill">{note.status}</span>
+            <div class="note-actions">
+              <span class="status-pill">{note.status}</span>
+              {"href" in note && note.href && (
+                <a class="button ghost" href={note.href}>자세히 보기</a>
+              )}
+            </div>
           </article>
         ))}
       </div>

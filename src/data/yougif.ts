@@ -265,6 +265,20 @@ export const workflow = [
 
 export const workflowNotes = [
   {
+    title: "Warudo RhyLive Startup Recovery",
+    date: "2026-07-25",
+    tag: "Warudo / RhyLive / Troubleshooting",
+    summary:
+      "Warudo를 실행하면 RhyLive가 비활성 상태로 시작하고 무선·유선 전환 후에야 얼굴 추적이 살아나던 문제를, 시작 직후 수신기를 한 번 안전하게 재초기화하는 방식으로 복구했다.",
+    points: [
+      "드라이버와 iPhone 연결을 확인한 뒤에도 시작할 때만 실패하는 패턴을 로그와 초기화 순서로 분리했다.",
+      "무선·유선 설정을 강제로 바꾸지 않고 현재 연결 방식 그대로 RhyLive 수신기를 다시 시작한다.",
+      "Warudo 0.15.0에서 완전 종료 후 재실행하여 수동 전환 없이 USB 얼굴 추적이 시작되는 것을 확인했다."
+    ],
+    status: "fixed & startup recovery shared",
+    href: `${base}workflow/rhylive-startup-recovery/`
+  },
+  {
     title: "OVR Toolkit SteamVR Input Binding Recovery",
     date: "2026-06-15",
     tag: "VRChat / OVR Toolkit / Troubleshooting",

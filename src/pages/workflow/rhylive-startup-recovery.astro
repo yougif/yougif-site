@@ -1,0 +1,181 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const downloadBase = `${base}downloads/rhylive-startup-recovery/`;
+---
+<BaseLayout
+  title="Warudo RhyLive 시작 오류 복구 | Yougif Workflow"
+  description="Warudo 시작 시 RhyLive가 비활성화되는 문제를 수신기 재초기화로 복구하는 방법."
+>
+  <header class="site-header">
+    <a class="brand" href={base}>Yougif</a>
+    <nav aria-label="RhyLive 복구 가이드 메뉴">
+      <a href={`${base}workflow/`}>Workflow</a>
+      <a href="#download">다운로드</a>
+      <a href="#install">설치</a>
+      <a href="#verify">확인</a>
+    </nav>
+  </header>
+
+  <main class="workflow-page">
+    <section class="section research-hero workflow-hero" aria-labelledby="page-title">
+      <div>
+        <p class="kicker">Warudo / RhyLive / Troubleshooting</p>
+        <h1 id="page-title">실행할 때 꺼지는<br />RhyLive를 다시 깨운다</h1>
+        <p class="lead">
+          Warudo를 처음 실행하면 RhyLive가 비활성 상태로 시작하지만,
+          무선·유선을 전환하면 얼굴 추적이 살아나는 문제를 위한 비공식 복구 방법이다.
+          Warudo 0.15.0에서 유선 연결로 확인했다.
+        </p>
+      </div>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="summary-title">
+      <div class="section-heading">
+        <p class="kicker">한눈에 보기</p>
+        <h2 id="summary-title">무엇을 바꾸는가</h2>
+      </div>
+      <div class="workflow-note-grid">
+        <article class="workflow-note">
+          <div class="note-meta"><strong>증상</strong></div>
+          <h3>시작할 때만 RhyLive가 X</h3>
+          <p>iPhone과 드라이버는 정상인데 Warudo 시작 직후에는 얼굴 추적이 연결되지 않는다.</p>
+        </article>
+        <article class="workflow-note">
+          <div class="note-meta"><strong>원인 방향</strong></div>
+          <h3>초기화 타이밍 충돌</h3>
+          <p>시작 과정의 수신기 초기화가 겹치면서 늦게 끝난 작업이 새 수신기를 실패 상태로 바꿀 수 있다.</p>
+        </article>
+        <article class="workflow-note">
+          <div class="note-meta"><strong>복구</strong></div>
+          <h3>3초 후 한 번 재시작</h3>
+          <p>현재 유선·무선 설정을 바꾸지 않고 RhyLive 수신기의 기존 재시작 동작을 한 번 호출한다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section research-panel" id="download" aria-labelledby="download-title">
+      <div class="section-heading">
+        <p class="kicker">Download</p>
+        <h2 id="download-title">공유용 파일</h2>
+      </div>
+      <div class="private-panel">
+        <div>
+          <strong>한 번에 받기</strong>
+          <p>사용자 정의 노드, 블루프린트 JSON, 설치 안내가 포함된 ZIP 파일이다.</p>
+        </div>
+        <a class="button primary" href={`${downloadBase}Warudo-RhyLive-Startup-Recovery.zip`} download>
+          ZIP 다운로드
+        </a>
+      </div>
+      <div class="workflow-note-grid">
+        <article class="workflow-note">
+          <h3>사용자 정의 노드</h3>
+          <p>Warudo Playground에 넣어 RhyLive 수신기의 재시작 동작을 호출한다.</p>
+          <a class="button ghost" href={`${downloadBase}RhyLiveRestartReceiverNode.cs`} download>CS 받기</a>
+        </article>
+        <article class="workflow-note">
+          <h3>복구 블루프린트</h3>
+          <p>그래프가 활성화되면 3초를 기다린 뒤 사용자 정의 노드를 실행한다.</p>
+          <a class="button ghost" href={`${downloadBase}RhyLive 시작 복구 - 공유용.json`} download>JSON 받기</a>
+        </article>
+      </div>
+      <p class="private-note">
+        비공식 임시 해결책이다. Warudo 또는 RhyLive 업데이트 후 내부 API가 바뀌면 작동하지 않을 수 있다.
+      </p>
+    </section>
+
+    <section class="section research-panel" id="install" aria-labelledby="install-title">
+      <div class="section-heading">
+        <p class="kicker">Install</p>
+        <h2 id="install-title">설치 순서</h2>
+      </div>
+      <ol class="workflow-loop">
+        <li>
+          <span>01</span>
+          <strong>노드 복사</strong>
+          <p><code>RhyLiveRestartReceiverNode.cs</code>를 Warudo의 <code>Warudo_Data\StreamingAssets\Playground</code> 폴더에 넣는다.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <strong>컴파일 대기</strong>
+          <p>Warudo가 실행 중이면 Playground 파일을 자동으로 컴파일하므로 잠시 기다린다.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <strong>그래프 가져오기</strong>
+          <p>Warudo 블루프린트 목록에서 <code>RhyLive 시작 복구 - 공유용.json</code>을 가져온다.</p>
+        </li>
+        <li>
+          <span>04</span>
+          <strong>수신기 선택</strong>
+          <p><code>RhyLive 수신기 다시 시작</code> 노드의 Receiver에서 자기 장면의 <code>RhyLive 수신기</code>를 선택한다.</p>
+        </li>
+        <li>
+          <span>05</span>
+          <strong>활성화</strong>
+          <p>복구 그래프의 눈 아이콘을 켠다. 같은 기능을 수행하는 복구 그래프는 하나만 활성화한다.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="connection-title">
+      <div class="section-heading">
+        <p class="kicker">Connection</p>
+        <h2 id="connection-title">유선과 무선</h2>
+      </div>
+      <div class="workflow-note-grid">
+        <article class="workflow-note">
+          <h3>유선 모드</h3>
+          <p>현재 수신기가 유선으로 설정되어 있으면 유선 수신기를 다시 시작한다.</p>
+        </article>
+        <article class="workflow-note">
+          <h3>무선 모드</h3>
+          <p>현재 수신기가 무선으로 설정되어 있으면 무선 수신기를 다시 시작한다. 연결 방식을 강제로 바꾸지 않는다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section research-panel" id="verify" aria-labelledby="verify-title">
+      <div class="section-heading">
+        <p class="kicker">Verify</p>
+        <h2 id="verify-title">정상 작동 확인</h2>
+      </div>
+      <ol class="workflow-loop">
+        <li><span>01</span><strong>완전 종료</strong><p>Warudo를 완전히 종료한 뒤 다시 실행한다.</p></li>
+        <li><span>02</span><strong>3~5초 대기</strong><p>무선·유선 버튼을 수동으로 전환하지 않고 기다린다.</p></li>
+        <li><span>03</span><strong>페이셜 확인</strong><p>모델의 얼굴 추적이 자동으로 시작되는지 확인한다.</p></li>
+      </ol>
+      <article class="workflow-note">
+        <div class="note-meta"><strong>Player.log</strong></div>
+        <h3>성공 로그 예시</h3>
+        <pre><code>[RhyLiveStartRecovery] Invoking ResetReceiver.
+[RhyLive SDK] iOS Device Connected: ...
+[RhyLive SDK] Successfully connected to iOS device</code></pre>
+        <p>
+          로그는 Windows의 <code>AppData\LocalLow\HakuyaLabs\Warudo\Player.log</code>에서 확인할 수 있다.
+          공개 게시물이나 문의 글에는 장치 이름과 장치 ID를 가린다.
+        </p>
+      </article>
+    </section>
+
+    <section class="section research-panel" aria-labelledby="limits-title">
+      <div class="section-heading">
+        <p class="kicker">Notes</p>
+        <h2 id="limits-title">알아둘 점</h2>
+      </div>
+      <div class="workflow-note">
+        <ul>
+          <li>RhyLive 또는 Warudo 본체 DLL을 교체하지 않는다.</li>
+          <li>공유용 JSON은 특정 사용자의 장면 ID를 포함하지 않으므로 Receiver를 직접 선택해야 한다.</li>
+          <li>무선 연결에 문제가 없다면 이 복구 그래프를 굳이 사용할 필요는 없다.</li>
+          <li>업데이트 후 실패하면 Player.log에서 Playground 컴파일 오류와 ResetReceiver 관련 메시지를 확인한다.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

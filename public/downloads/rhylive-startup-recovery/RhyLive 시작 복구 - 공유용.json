@@ -1,0 +1,70 @@
+{
+  "id": "03b2b9f8-01b3-48dc-8fa4-7f7f717a249a",
+  "enabled": true,
+  "name": "RhyLive 시작 복구 - 공유용",
+  "order": 0,
+  "group": null,
+  "panningX": null,
+  "panningY": null,
+  "scaling": null,
+  "nodes": {
+    "975f29be-bae5-4bce-8962-1ad85c85d804": {
+      "id": "975f29be-bae5-4bce-8962-1ad85c85d804",
+      "dataInputs": {},
+      "typeId": "2f7de7a1-b653-471d-b224-58748c51f327",
+      "name": "ON_ENABLE_GRAPH",
+      "x": 0.0,
+      "y": 0.0
+    },
+    "95c10e33-088c-46f7-870a-904aeece52fd": {
+      "id": "95c10e33-088c-46f7-870a-904aeece52fd",
+      "dataInputs": {
+        "Delay": {
+          "type": "float",
+          "value": "3.0"
+        }
+      },
+      "typeId": "6ffd61d7-01bc-4870-a8d5-02027705f4b9",
+      "name": "DELAY_CONTROL_FLOW",
+      "x": 350.0,
+      "y": 0.0
+    },
+    "07c99aec-a3fd-4593-b172-028469281be6": {
+      "id": "07c99aec-a3fd-4593-b172-028469281be6",
+      "dataInputs": {
+        "Receiver": {
+          "type": "Warudo.Plugins.RhyLive.Assets.RhyLiveReceiverAsset",
+          "value": "null"
+        }
+      },
+      "typeId": "ec39ce9d-4d6d-48ab-8d5d-27e96c48d5a8",
+      "name": "RHY_LIVE_RESTART_RECEIVER",
+      "x": 700.0,
+      "y": 0.0
+    }
+  },
+  "dataConnections": [],
+  "flowConnections": [
+    {
+      "outputNode": "975f29be-bae5-4bce-8962-1ad85c85d804",
+      "inputNode": "95c10e33-088c-46f7-870a-904aeece52fd",
+      "outputPort": "Exit",
+      "inputPort": "Enter"
+    },
+    {
+      "outputNode": "95c10e33-088c-46f7-870a-904aeece52fd",
+      "inputNode": "07c99aec-a3fd-4593-b172-028469281be6",
+      "outputPort": "Exit",
+      "inputPort": "Enter"
+    }
+  ],
+  "properties": {
+    "id": "f905dd61-d5a3-46bd-8814-106ee270b020",
+    "dataInputs": {
+      "Variables": {
+        "type": "Warudo.Core.Graphs.GraphVariable[]",
+        "value": "[]"
+      }
+    }
+  }
+}
