@@ -675,6 +675,72 @@ h2 {
   min-width: 0;
 }
 
+.install-shortcut {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(183, 242, 109, 0.44);
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(183, 242, 109, 0.08);
+}
+
+.install-shortcut strong {
+  color: var(--lime);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.install-shortcut p {
+  color: var(--text);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.guide-reference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.guide-reference {
+  min-width: 0;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.guide-reference a {
+  display: block;
+  padding: 0.75rem;
+  background: #fff;
+}
+
+.guide-reference img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.guide-reference figcaption {
+  display: grid;
+  gap: 0.35rem;
+  border-top: 1px solid var(--line);
+  padding: 0.85rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.guide-reference figcaption strong {
+  color: var(--cyan);
+  font-size: 1rem;
+}
+
 .rhylive-guide-page pre {
   max-width: 100%;
   margin: 0;

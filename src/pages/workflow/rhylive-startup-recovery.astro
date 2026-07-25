@@ -97,33 +97,96 @@ const downloadBase = `${base}downloads/rhylive-startup-recovery/`;
         <p class="kicker">Install</p>
         <h2 id="install-title">설치 순서</h2>
       </div>
+      <div class="install-shortcut" role="note">
+        <strong>가장 중요한 경로</strong>
+        <p>
+          Warudo 위쪽 <code>Menu</code> → <code>Open Data Folder</code> →
+          열린 폴더의 <code>Playground</code>
+        </p>
+      </div>
       <ol class="workflow-loop">
         <li>
           <span>01</span>
-          <strong>노드 복사</strong>
-          <p><code>RhyLiveRestartReceiverNode.cs</code>를 Warudo의 <code>Warudo_Data\StreamingAssets\Playground</code> 폴더에 넣는다.</p>
+          <strong>ZIP 압축 풀기</strong>
+          <p><code>Warudo-RhyLive-Startup-Recovery.zip</code>을 원하는 폴더에 압축 해제한다.</p>
         </li>
         <li>
           <span>02</span>
-          <strong>컴파일 대기</strong>
-          <p>Warudo가 실행 중이면 Playground 파일을 자동으로 컴파일하므로 잠시 기다린다.</p>
+          <strong>Playground 열기</strong>
+          <p>
+            Warudo 위쪽 <code>Menu</code>에서 <code>Open Data Folder</code>를 누른다.
+            열린 폴더의 <code>Playground</code> 안에
+            <code>RhyLiveRestartReceiverNode.cs</code>를 넣고 잠시 기다린다.
+          </p>
         </li>
         <li>
           <span>03</span>
-          <strong>그래프 가져오기</strong>
-          <p>Warudo 블루프린트 목록에서 <code>RhyLive 시작 복구 - 공유용.json</code>을 가져온다.</p>
+          <strong>JSON 불러오기</strong>
+          <p>
+            Warudo Editor 왼쪽의 <code>Σ</code> 아이콘을 누른다.
+            블루프린트 목록 아래의 <code>⋯</code> 메뉴에서 파일 가져오기를 선택한 뒤,
+            압축을 푼 <code>RhyLive 시작 복구 - 공유용.json</code>을 연다.
+          </p>
         </li>
         <li>
           <span>04</span>
           <strong>수신기 선택</strong>
-          <p><code>RhyLive 수신기 다시 시작</code> 노드의 Receiver에서 자기 장면의 <code>RhyLive 수신기</code>를 선택한다.</p>
+          <p>
+            가져온 <code>RhyLive 시작 복구 - 공유용</code> 그래프를 연다.
+            <code>RhyLive 수신기 다시 시작</code> 노드를 누르고,
+            <code>Receiver</code>에서 현재 장면의 <code>RhyLive 수신기</code>를 선택한다.
+          </p>
         </li>
         <li>
           <span>05</span>
-          <strong>활성화</strong>
-          <p>복구 그래프의 눈 아이콘을 켠다. 같은 기능을 수행하는 복구 그래프는 하나만 활성화한다.</p>
+          <strong>활성화 후 재실행</strong>
+          <p>
+            복구 그래프 옆의 눈 아이콘을 켠 다음 Warudo를 완전히 종료하고 다시 실행한다.
+            장면이 열린 뒤 3~5초 기다린다.
+          </p>
         </li>
       </ol>
+      <div class="guide-reference-grid" aria-label="Warudo 공식 문서 화면">
+        <figure class="guide-reference">
+          <a
+            href="https://docs.warudo.app/docs/tutorials/data-folder"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://docs.warudo.app/assets/images/data-folder-1-0fc40ed2a329b109dd90db29af849fe3.png"
+              alt="Warudo Menu에서 Open Data Folder를 선택하는 공식 문서 화면"
+              loading="lazy"
+            />
+          </a>
+          <figcaption>
+            <strong>① 데이터 폴더 열기</strong>
+            Warudo 공식 문서의 <code>Menu → Open Data Folder</code> 화면.
+          </figcaption>
+        </figure>
+        <figure class="guide-reference">
+          <a
+            href="https://docs.warudo.app/docs/blueprints/templates/overview"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://docs.warudo.app/assets/images/en-blueprint-templates-1-02f886518cdeaa71b86a640da08a7145.png"
+              alt="Warudo Blueprints 탭에서 Import Blueprint From File 버튼을 누르는 공식 문서 화면"
+              loading="lazy"
+            />
+          </a>
+          <figcaption>
+            <strong>② JSON 가져오기</strong>
+            Warudo 공식 문서에서 표시한 <code>Import Blueprint From File</code> 버튼.
+          </figcaption>
+        </figure>
+      </div>
+      <p class="private-note">
+        <strong>기본 Steam 절대 경로:</strong>
+        <code>C:\Program Files (x86)\Steam\steamapps\common\Warudo\Warudo_Data\StreamingAssets\Playground\</code>
+        다른 드라이브에 설치했어도 <code>Open Data Folder</code>를 쓰면 경로를 찾을 필요가 없다.
+      </p>
     </section>
 
     <section class="section research-panel" aria-labelledby="connection-title">
