@@ -625,6 +625,68 @@ h2 {
   margin-top: auto;
 }
 
+.rhylive-guide-page .workflow-hero {
+  min-height: auto;
+  padding-top: clamp(3.5rem, 7vw, 6rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.rhylive-guide-page .workflow-hero h1 {
+  max-width: 60rem;
+  font-size: clamp(3rem, 5.2vw, 4.65rem);
+  line-height: 1.04;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.rhylive-guide-page .workflow-hero h1 span {
+  display: block;
+}
+
+.rhylive-guide-page .workflow-hero .lead {
+  max-width: 46rem;
+}
+
+.rhylive-guide-page .section-heading h2 {
+  max-width: 100%;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.08;
+  word-break: keep-all;
+}
+
+.rhylive-guide-page .workflow-note h3 {
+  font-size: clamp(1.25rem, 2.25vw, 1.7rem);
+  line-height: 1.18;
+  word-break: keep-all;
+}
+
+.rhylive-guide-page .workflow-note p,
+.rhylive-guide-page .workflow-note li,
+.rhylive-guide-page .workflow-loop p {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.rhylive-guide-page .workflow-loop {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.rhylive-guide-page .workflow-loop li {
+  min-width: 0;
+}
+
+.rhylive-guide-page pre {
+  max-width: 100%;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.rhylive-guide-page code {
+  overflow-wrap: anywhere;
+}
+
 .workflow-loop {
   margin: 0;
   padding: 0;
@@ -1620,6 +1682,69 @@ h2 {
     width: 100%;
     overflow-x: auto;
     padding-bottom: 0.2rem;
+  }
+
+  .rhylive-guide-header {
+    gap: 0.45rem;
+    padding-block: 0.7rem;
+  }
+
+  .rhylive-guide-header nav {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    gap: 0.25rem 0.8rem;
+    font-size: 0.82rem;
+  }
+
+  .rhylive-guide-page .workflow-hero {
+    padding-top: 2.5rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .rhylive-guide-page .workflow-hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.05rem, 9.8vw, 2.4rem);
+    line-height: 1.08;
+  }
+
+  .rhylive-guide-page .workflow-hero h1 span {
+    display: inline;
+  }
+
+  .rhylive-guide-page .workflow-hero h1 span + span::before {
+    content: " ";
+  }
+
+  .rhylive-guide-page .workflow-hero .lead {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .rhylive-guide-page .section {
+    width: min(100% - 1.25rem, 34rem);
+  }
+
+  .rhylive-guide-page .section-heading h2 {
+    font-size: clamp(1.85rem, 8.5vw, 2.25rem);
+    line-height: 1.12;
+  }
+
+  .rhylive-guide-page .workflow-note,
+  .rhylive-guide-page .workflow-loop li,
+  .rhylive-guide-page .private-panel {
+    min-width: 0;
+    padding: 0.9rem;
+  }
+
+  .rhylive-guide-page .workflow-note h3 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  .rhylive-guide-page .private-panel .button,
+  .rhylive-guide-page .workflow-note .button {
+    width: 100%;
   }
 
   .gallery-grid {
